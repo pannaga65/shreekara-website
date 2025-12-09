@@ -2,25 +2,39 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
 :root {
-  --color-primary: #0d5c51;
-  --color-primary-dark: #064238;
-  --color-primary-light: #10766a;
-  --color-secondary: #eaf7f4;
-  --color-accent: #f4b400;
-  --color-accent-hover: #d99f00;
-  --color-bg: #f7fbfa;
-  --color-white: #ffffff;
-  --color-text: #1a1a1a;
-  --color-text-muted: #6e6e6e;
-  --color-success: #28a745;
-  --color-danger: #dc3545;
+  /* --- NEW COLOR PALETTE EXTRACTED FROM IMAGE --- */
+  /* Main Green/Teal (Swatch 3) */
+  --color-primary: #2EAF7D;
+  
+  /* Deep Navy/Teal (Swatch 1) */
+  --color-primary-dark: #02353C;
+  
+  /* Bright Cyan/Mint (Swatch 4) */
+  --color-primary-light: #3FD0C9;
+  
+  /* Very light Mint/Cyan for backgrounds and buttons */
+  --color-secondary: #E6F7F5;
+  
+  /* Using the Bright Cyan as the Accent (Replacing Yellow) */
+  --color-accent: #3FD0C9;
+  --color-accent-hover: #2BC4BC;
 
+  /* General UI Colors */
+  --color-bg: #F5FAFA;
+  --color-white: #ffffff;
+  --color-text: #02353C; /* Dark navy text for better branding */
+  --color-text-muted: #537578;
+  --color-success: #2EAF7D;
+  --color-danger: #FF6B6B;
+
+  /* UI Dimensions */
   --radius-lg: 20px;
   --radius-md: 14px;
   --radius-sm: 10px;
 
-  --shadow-soft: 0 18px 40px rgba(15, 61, 51, 0.12);
-  --shadow-hover: 0 24px 50px rgba(15, 61, 51, 0.18);
+  /* Updated Shadows to matching Teal tones */
+  --shadow-soft: 0 18px 40px rgba(2, 53, 60, 0.12);
+  --shadow-hover: 0 24px 50px rgba(2, 53, 60, 0.18);
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -108,7 +122,7 @@ ul {
 
 /* Header / Nav */
 .header {
-  background: var(--color-primary);
+  background: var(--color-primary-dark); /* Changed to dark to match image header contrast */
   color: var(--color-white);
   padding: 1.2rem 0;
   position: sticky;
@@ -134,7 +148,7 @@ ul {
   width: 42px;
   height: 42px;
   border-radius: 50%;
-  background: var(--color-secondary);
+  background: var(--color-primary);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -181,7 +195,7 @@ ul {
   left: 0;
   width: 0;
   height: 2px;
-  background: var(--color-secondary);
+  background: var(--color-primary-light);
   transition: width 0.3s ease;
 }
 
@@ -198,8 +212,8 @@ ul {
 .nav-cta {
   padding: 0.6rem 1.4rem !important;
   border-radius: 999px;
-  background: var(--color-secondary);
-  color: var(--color-primary);
+  background: var(--color-primary); /* Pop color */
+  color: var(--color-white);
   font-weight: 500;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
@@ -209,7 +223,8 @@ ul {
 }
 
 .nav-cta:hover {
-  background: var(--color-white);
+  background: var(--color-primary-light);
+  color: var(--color-primary-dark);
   transform: translateY(-2px);
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
 }
@@ -254,11 +269,12 @@ ul {
 /* Hero */
 .hero {
   padding: 4rem 0 5rem;
+  /* Updated Gradient to match the ColibriWP screenshot (Dark Navy to Green to Cyan) */
   background: linear-gradient(
-    130deg,
-    var(--color-primary) 0%,
-    #0e6457 40%,
-    var(--color-primary-dark) 100%
+    120deg,
+    var(--color-primary-dark) 0%,
+    var(--color-primary) 60%,
+    var(--color-primary-light) 100%
   );
   position: relative;
   overflow: hidden;
@@ -271,7 +287,7 @@ ul {
   right: -20%;
   width: 800px;
   height: 800px;
-  background: radial-gradient(circle, rgba(234, 247, 244, 0.1) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, transparent 70%);
   border-radius: 50%;
 }
 
@@ -295,8 +311,8 @@ ul {
   gap: 0.6rem;
   padding: 0.4rem 1.2rem;
   border-radius: 999px;
-  background: rgba(234, 247, 244, 0.15);
-  border: 1px solid rgba(234, 247, 244, 0.3);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   font-size: 0.8rem;
   margin-bottom: 1.5rem;
   backdrop-filter: blur(10px);
@@ -306,7 +322,7 @@ ul {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #54f4c1;
+  background: var(--color-primary-light);
   animation: pulse 2s ease-in-out infinite;
 }
 
@@ -361,7 +377,7 @@ ul {
 
 .hero-feature-item i {
   font-size: 1.2rem;
-  color: var(--color-accent);
+  color: var(--color-primary-light);
 }
 
 .hero-rating {
@@ -378,7 +394,7 @@ ul {
 }
 
 .hero-stars i {
-  color: var(--color-accent);
+  color: #f4b400; /* Keep stars yellow for visibility */
   font-size: 1rem;
 }
 
@@ -392,7 +408,7 @@ ul {
 .hero-card {
   width: 100%;
   max-width: 420px;
-  background: var(--color-secondary);
+  background: var(--color-white);
   border-radius: 32px;
   padding: 1.8rem;
   box-shadow: var(--shadow-soft);
@@ -411,7 +427,7 @@ ul {
 .hero-image {
   border-radius: 24px;
   overflow: hidden;
-  background: #dfeee9;
+  background: var(--color-secondary);
   height: 320px;
   display: flex;
   align-items: center;
@@ -484,15 +500,16 @@ ul {
 }
 
 .btn-primary {
-  background: var(--color-secondary);
-  color: var(--color-primary);
-  box-shadow: var(--shadow-soft);
+  background: var(--color-primary-light);
+  color: var(--color-primary-dark);
+  box-shadow: 0 10px 20px rgba(63, 208, 201, 0.25);
 }
 
 .btn-primary:hover:not(:disabled) {
   transform: translateY(-2px);
-  box-shadow: var(--shadow-hover);
+  box-shadow: 0 15px 30px rgba(63, 208, 201, 0.35);
   background: var(--color-white);
+  color: var(--color-primary);
 }
 
 .btn-outline {
@@ -570,7 +587,7 @@ ul {
   position: absolute;
   top: 1.5rem;
   right: 1.5rem;
-  background: var(--color-accent);
+  background: var(--color-primary);
   color: var(--color-white);
   padding: 0.3rem 0.8rem;
   border-radius: 999px;
@@ -582,7 +599,8 @@ ul {
 }
 
 .product-badge-new {
-  background: var(--color-success);
+  background: var(--color-accent);
+  color: var(--color-primary-dark);
 }
 
 .product-image {
@@ -747,7 +765,7 @@ ul {
   margin: 0 auto 1.2rem;
   color: var(--color-white);
   font-size: 1.8rem;
-  box-shadow: 0 8px 20px rgba(13, 92, 81, 0.3);
+  box-shadow: 0 8px 20px rgba(13, 92, 81, 0.2);
 }
 
 .feature-title {
@@ -918,7 +936,7 @@ ul {
 }
 
 .footer a:hover {
-  color: var(--color-accent);
+  color: var(--color-primary-light);
   padding-left: 5px;
 }
 
@@ -940,7 +958,8 @@ ul {
 }
 
 .footer-social a:hover {
-  background: var(--color-accent);
+  background: var(--color-primary-light);
+  color: var(--color-primary-dark);
   transform: translateY(-3px);
   padding-left: 0;
 }
@@ -964,7 +983,7 @@ ul {
 }
 
 .footer-links a:hover {
-  color: var(--color-accent);
+  color: var(--color-primary-light);
 }
 
 /* Back to Top Button */
@@ -1481,11 +1500,12 @@ textarea:focus {
 
 @media (max-width: 900px) {
   .hero {
+    /* Slightly adjusted gradient angle for mobile/tablet */
     background: linear-gradient(
       160deg,
-      var(--color-primary) 0%,
-      #0e6457 60%,
-      var(--color-primary-dark) 100%
+      var(--color-primary-dark) 0%,
+      var(--color-primary) 60%,
+      var(--color-primary-light) 100%
     );
   }
 
@@ -1630,6 +1650,7 @@ textarea:focus {
   }
 
   .hero {
+    /* More solid teal look for mobile */
     background: var(--color-primary);
     padding: 3rem 0;
   }
