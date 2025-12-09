@@ -1,0 +1,156 @@
+{
+  "products": [
+    {
+      "id": "silicon-gel-sheet",
+      "name": "Silicon Gel Sheet",
+      "brand": "—",
+      "supplier": "Shreekara Traders",
+      "category": "Scar Management",
+      "image": "assets/images/silicon-gel-sheet.jpg",
+      "shortDescription": "Reusable silicon gel sheets for post-surgical and burn scar management.",
+      "uses": [
+        "Reduces thickness of hypertrophic and keloid scars",
+        "Helps lighten redness and discoloration",
+        "Softens and flattens scar tissue over time"
+      ],
+      "variants": [
+        {
+          "id": "sgs-10x10-1",
+          "label": "10 × 10 cm · Pack of 1",
+          "specification": "Standard",
+          "size": "10 × 10 cm",
+          "pack": "1",
+          "price": 499
+        },
+        {
+          "id": "sgs-10x20-1",
+          "label": "10 × 20 cm · Pack of 1",
+          "specification": "Standard",
+          "size": "10 × 20 cm",
+          "pack": "1",
+          "price": 799
+        }
+      ]
+    },
+    {
+      "id": "gelatin-sponge",
+      "name": "Gelatin Sponge",
+      "brand": "Gelatino / Osseous",
+      "supplier": "EON Meditech",
+      "category": "Absorbable Hemostatic",
+      "image": "assets/images/gelatin-sponge.jpg",
+      "shortDescription": "Absorbable hemostatic sponges for intra-operative bleeding control.",
+      "uses": [
+        "Controls bleeding via mechanical hemostasis",
+        "Used in ENT, dental, general and anal surgeries",
+        "Completely biodegradable and absorbed by the body"
+      ],
+      "variants": [
+        {
+          "id": "gs-standard-80x50x10-10",
+          "label": "Standard · 80 × 50 × 10 mm · Pack of 10",
+          "specification": "Standard",
+          "size": "80 × 50 × 10 mm",
+          "pack": "10",
+          "price": 1299
+        },
+        {
+          "id": "gs-dental-10x10x10-32",
+          "label": "Dental · 10 × 10 × 10 mm · Pack of 32",
+          "specification": "Dental",
+          "size": "10 × 10 × 10 mm",
+          "pack": "32",
+          "price": 899
+        },
+        {
+          "id": "gs-anal-80x50dia-6",
+          "label": "Anal · 80 × 50 mm Dia · Pack of 6",
+          "specification": "Anal",
+          "size": "80 × 50 mm Dia",
+          "pack": "6",
+          "price": 1499
+        }
+      ]
+    },
+    {
+      "id": "collagen-powder",
+      "name": "Collagen Powder",
+      "brand": "BioFil",
+      "supplier": "EUCARE",
+      "category": "Advanced Wound Care",
+      "image": "assets/images/collagen-powder.jpg",
+      "shortDescription": "Collagen particles for chronic and non-healing wounds.",
+      "uses": [
+        "Promotes granulation and tissue regeneration",
+        "Maintains a moist wound environment",
+        "Ideal for diabetic ulcers, pressure sores and chronic wounds"
+      ],
+      "variants": [
+        {
+          "id": "cp-particles-5ml-10",
+          "label": "Particles · 5 ml · Pack of 10",
+          "specification": "Particles",
+          "size": "5 ml",
+          "pack": "10",
+          "price": 1999
+        },
+        {
+          "id": "cp-particles-10ml-10",
+          "label": "Particles · 10 ml · Pack of 10",
+          "specification": "Particles",
+          "size": "10 ml",
+          "pack": "10",
+          "price": 2499
+        },
+        {
+          "id": "cp-particles-ab-5ml-10",
+          "label": "Particles AB (with Antibiotics) · 5 ml · Pack of 10",
+          "specification": "Particles AB",
+          "size": "5 ml",
+          "pack": "10",
+          "price": 2199
+        },
+        {
+          "id": "cp-particles-ab-10ml-10",
+          "label": "Particles AB (with Antibiotics) · 10 ml · Pack of 10",
+          "specification": "Particles AB",
+          "size": "10 ml",
+          "pack": "10",
+          "price": 2699
+        }
+      ]
+    },
+    {
+      "id": "collagen-sheet",
+      "name": "Collagen Sheet",
+      "brand": "BioFil-AB",
+      "supplier": "EUCARE",
+      "category": "Advanced Wound Care",
+      "image": "assets/images/collagen-sheet.jpg",
+      "shortDescription": "Collagen sheets for flat surgical wounds, burns and trauma.",
+      "uses": [
+        "Provides immediate wound coverage",
+        "Maintains optimal moisture and supports tissue growth",
+        "Reduces pain and dressing frequency"
+      ],
+      "variants": [
+        {
+          "id": "cs-5x5-10",
+          "label": "5 × 5 cm · Pack of 10",
+          "specification": "Sheet",
+          "size": "5 × 5 cm",
+          "pack": "10",
+          "price": 2999
+        },
+        {
+          "id": "cs-10x10-10",
+          "label": "10 × 10 cm · Pack of 10",
+          "specification": "Sheet",
+          "size": "10 × 10 cm",
+          "pack": "10",
+          "price": 4499
+        }
+      ]
+    }
+  ]
+}

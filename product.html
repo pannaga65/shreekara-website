@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Basic SEO -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Product Details - Shreekara Traders | Advanced Wound Care & Surgical Supplies</title>
+  <meta name="description" content="View full details, specifications, sizes, variants, and uses for advanced wound care and surgical products supplied by Shreekara Traders." />
+  <meta name="keywords" content="Shreekara Traders, wound care, surgical supplies, collagen sheet, gelatin sponge, silicon gel sheet, collagen powder" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Product Details | Shreekara Traders" />
+  <meta property="og:description" content="Explore detailed specifications, variants, and uses of our wound care products." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/images/shreekara-logo.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Product Details - Shreekara Traders" />
+  <meta name="twitter:description" content="Advanced wound care products with detailed specifications and variant options." />
+
+  <!-- Fonts & Styles -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+
+<body id="top">
+
+<!-- HEADER -->
+<header class="header">
+  <div class="container">
+    <div class="logo">
+      <div class="logo-mark">
+        <img src="assets/images/shreekara-logo.png" alt="Shreekara Traders Logo" />
+      </div>
+      <div>
+        <div class="logo-text-main">Shreekara Traders</div>
+        <div class="logo-text-sub">Advanced Medical Supplies</div>
+      </div>
+    </div>
+
+    <button class="nav-toggle" onclick="toggleNav()" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <nav class="nav">
+      <a href="index.html"><i class="fas fa-home"></i> Home</a>
+      <a href="products.html" class="active"><i class="fas fa-boxes"></i> Products</a>
+      <a href="clients.html"><i class="fas fa-handshake"></i> Partners</a>
+      <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+      <a href="contact.html" class="nav-cta"><i class="fas fa-envelope"></i> Contact</a>
+
+      <a href="#" class="cart-link" id="cart-link">
+        <i class="fas fa-shopping-cart"></i> <span id="cart-count">0</span>
+      </a>
+    </nav>
+  </div>
+</header>
+
+<!-- MAIN PRODUCT CONTENT: AUTO-FILLED BY products.js -->
+<div id="productPage"></div>
+
+<!-- PRODUCT QUICK VIEW MODAL -->
+<div id="productModal" class="product-modal">
+  <div class="product-modal-overlay" data-modal-close></div>
+
+  <div class="product-modal-content">
+    <button class="product-modal-close" data-modal-close>&times;</button>
+
+    <div class="product-modal-body">
+      <!-- FILLED BY JS -->
+    </div>
+  </div>
+</div>
+
+<!-- BACK TO TOP BUTTON -->
+<button id="backToTop" class="back-to-top">
+  <i class="fas fa-arrow-up"></i>
+</button>
+
+<!-- SCRIPTS -->
+<script src="scripts/main.js"></script>
+<script src="scripts/products.js"></script>
+
+</body>
+</html>

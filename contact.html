@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us - Shreekara Traders</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+
+<header class="header">
+  <div class="container">
+    <div class="logo">
+      <div class="logo-mark">
+        <img src="assets/images/shreekara-logo.png" alt="Shreekara Traders Logo" />
+      </div>
+      <div>
+        <div class="logo-text-main">Shreekara Traders</div>
+        <div class="logo-text-sub">Advanced Medical Supplies</div>
+      </div>
+    </div>
+
+    <button class="nav-toggle" onclick="toggleNav()" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <nav class="nav">
+      <a href="index.html"><i class="fas fa-home"></i> Home</a>
+      <a href="products.html"><i class="fas fa-boxes"></i> Products</a>
+      <a href="clients.html"><i class="fas fa-handshake"></i> Partners</a>
+      <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+      <a href="contact.html" class="nav-cta active"><i class="fas fa-envelope"></i> Contact</a>
+      <a href="#" class="cart-link" id="cart-link">
+        <i class="fas fa-shopping-cart"></i> <span id="cart-count">0</span>
+      </a>
+    </nav>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <h1 class="page-hero-title">Contact Us</h1>
+    <div class="breadcrumbs">Home / Contact</div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container contact-wrapper">
+
+    <div>
+      <h3>Get in Touch</h3>
+      <ul class="contact-info-list">
+        <li>📍 Bangalore, Karnataka</li>
+        <li>📞 6361673634</li>
+        <li>📧 info@shreekaratraders.com</li>
+      </ul>
+    </div>
+
+    <div class="contact-card">
+      <form name="contact" method="POST" data-netlify="true">
+        
+        <div class="form-row">
+          <div>
+            <label>Name</label>
+            <input type="text" name="name" required />
+          </div>
+
+          <div>
+            <label>Email</label>
+            <input type="email" name="email" required />
+          </div>
+        </div>
+
+        <div>
+          <label>Phone</label>
+          <input type="text" name="phone" />
+        </div>
+
+        <div>
+          <label>Your Message</label>
+          <textarea name="message" required></textarea>
+        </div>
+
+        <button class="btn btn-primary" type="submit">Send Message</button>
+
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-top">
+    <div>
+      <h4 class="footer-heading"><i class="fas fa-hospital"></i> Shreekara Traders</h4>
+      <p>Advanced wound care & surgical supplies distributor.</p>
+    </div>
+
+    <div>
+      <h4 class="footer-heading"><i class="fas fa-link"></i> Quick Links</h4>
+      <p><a href="products.html"><i class="fas fa-angle-right"></i> Products</a></p>
+      <p><a href="clients.html"><i class="fas fa-angle-right"></i> Partners</a></p>
+    </div>
+
+    <div>
+      <h4 class="footer-heading"><i class="fas fa-info-circle"></i> Company</h4>
+      <p><a href="about.html"><i class="fas fa-angle-right"></i> About Us</a></p>
+      <p><a href="contact.html"><i class="fas fa-angle-right"></i> Contact</a></p>
+    </div>
+
+    <div>
+      <h4 class="footer-heading"><i class="fas fa-map-marker-alt"></i> Contact</h4>
+      <p><i class="fas fa-home"></i> Bangalore, Karnataka</p>
+      <p><i class="fas fa-phone"></i> Phone: 6361673634</p>
+      <p><i class="fas fa-envelope"></i> Email: info@shreekaratraders.com</p>
+    </div>
+  </div>
+
+  <div class="container footer-bottom">
+    <span>© 2024 Shreekara Traders. All Rights Reserved.</span>
+  </div>
+</footer>
+
+<button id="backToTop" class="back-to-top"><i class="fas fa-arrow-up"></i></button>
+<script src="scripts/main.js"></script>
+</body>
+</html>
