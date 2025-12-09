@@ -6,7 +6,7 @@
       "brand": "—",
       "supplier": "Shreekara Traders",
       "category": "Scar Management",
-      "image": "assets/images/silicon-gel-sheet.jpg",
+      "image": "assets/images/silicon-gel-sheet.png",
       "shortDescription": "Reusable silicon gel sheets for post-surgical and burn scar management.",
       "uses": [
         "Reduces thickness of hypertrophic and keloid scars",
@@ -38,7 +38,7 @@
       "brand": "Gelatino / Osseous",
       "supplier": "EON Meditech",
       "category": "Absorbable Hemostatic",
-      "image": "assets/images/gelatin-sponge.jpg",
+      "image": "assets/images/gelatin-sponge.png",
       "shortDescription": "Absorbable hemostatic sponges for intra-operative bleeding control.",
       "uses": [
         "Controls bleeding via mechanical hemostasis",
@@ -78,7 +78,7 @@
       "brand": "BioFil",
       "supplier": "EUCARE",
       "category": "Advanced Wound Care",
-      "image": "assets/images/collagen-powder.jpg",
+      "image": "assets/images/collagen-powder.png",
       "shortDescription": "Collagen particles for chronic and non-healing wounds.",
       "uses": [
         "Promotes granulation and tissue regeneration",
@@ -126,7 +126,7 @@
       "brand": "BioFil-AB",
       "supplier": "EUCARE",
       "category": "Advanced Wound Care",
-      "image": "assets/images/collagen-sheet.jpg",
+      "image": "assets/images/collagen-sheet.png",
       "shortDescription": "Collagen sheets for flat surgical wounds, burns and trauma.",
       "uses": [
         "Provides immediate wound coverage",
