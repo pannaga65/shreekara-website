@@ -1049,7 +1049,7 @@ ul {
 
 .logo-slider {
   display: flex;
-  width: calc(200% + 200px);
+  width: calc(200% + 60px);
   animation: scroll 30s linear infinite;
 }
 
@@ -1066,7 +1066,7 @@ ul {
   width: auto;
   max-width: 150px;
   object-fit: contain;
-  margin: 0 45px;
+  margin: 0 30px;
   filter: grayscale(100%);
   opacity: 0.7;
   transition: all 0.3s ease;
@@ -1087,6 +1087,19 @@ ul {
   }
 }
 
+/* Adjust animation speed for different screen sizes */
+@media (max-width: 768px) {
+  .logo-slider {
+    animation-duration: 25s;
+  }
+}
+
+@media (max-width: 576px) {
+  .logo-slider {
+    animation-duration: 20s;
+  }
+}
+
 /* Pause animation on hover for desktop */
 @media (hover: hover) {
   .logo-slider-container:hover .logo-slider {
@@ -1103,7 +1116,7 @@ ul {
   .partner-logo-img {
     height: 50px;
     max-width: 120px;
-    margin: 0 35px;
+    margin: 0 20px;
   }
 }
 
@@ -1115,7 +1128,7 @@ ul {
   .partner-logo-img {
     height: 40px;
     max-width: 100px;
-    margin: 0 25px;
+    margin: 0 15px;
   }
 }
 
@@ -1127,7 +1140,7 @@ ul {
   .partner-logo-img {
     height: 35px;
     max-width: 80px;
-    margin: 0 20px;
+    margin: 0 10px;
   }
 }
 
