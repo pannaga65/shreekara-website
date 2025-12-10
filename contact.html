@@ -4,11 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact Us - Shreekara Traders</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" 
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <!-- Main Styles -->
     <link rel="stylesheet" href="assets/styles.css" />
 </head>
 <body>
 
+<!-- HEADER -->
 <header class="header">
   <div class="container">
     <div class="logo">
@@ -38,6 +44,7 @@
   </div>
 </header>
 
+<!-- HERO SECTION -->
 <section class="page-hero">
   <div class="container">
     <h1 class="page-hero-title">Contact Us</h1>
@@ -45,24 +52,25 @@
   </div>
 </section>
 
+<!-- CONTACT FORM SECTION -->
 <section class="section">
   <div class="container contact-wrapper">
 
     <div>
       <h3>Get in Touch</h3>
       <ul class="contact-info-list">
-        <li>📍 Bangalore, Karnataka</li>
-        <li>📞 6361673634</li>
-        <li>📧 info@shreekara.com</li>
+        <li><i class="fas fa-location-dot"></i> Bangalore, Karnataka</li>
+        <li><i class="fas fa-phone"></i> 6361673634</li>
+        <li><i class="fas fa-envelope"></i> info@shreekara.com</li>
       </ul>
     </div>
 
     <div class="contact-card">
 
-      <!-- UPDATED FORM -->
+      <!-- FULLY FIXED NETLIFY FORM -->
       <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
 
-        <!-- Required hidden field for Netlify -->
+        <!-- REQUIRED Hidden fields for Netlify -->
         <input type="hidden" name="form-name" value="contact">
         <input type="hidden" name="bot-field">
 
@@ -88,14 +96,16 @@
           <textarea name="message" required></textarea>
         </div>
 
-        <button class="btn btn-primary" type="submit">Send Message</button>
-
+        <button class="btn btn-primary" type="submit">
+          <i class="fas fa-paper-plane"></i> Send Message
+        </button>
       </form>
-    </div>
 
+    </div>
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer class="footer">
   <div class="container footer-top">
     <div>
@@ -106,7 +116,7 @@
     <div>
       <h4 class="footer-heading"><i class="fas fa-link"></i> Quick Links</h4>
       <p><a href="products.html"><i class="fas fa-angle-right"></i> Products</a></p>
-      <p><a href="clients.html"><i class="fas a-angle-right"></i> Partners</a></p>
+      <p><a href="clients.html"><i class="fas fa-angle-right"></i> Partners</a></p>
     </div>
 
     <div>
@@ -118,8 +128,8 @@
     <div>
       <h4 class="footer-heading"><i class="fas fa-map-marker-alt"></i> Contact</h4>
       <p><i class="fas fa-home"></i> Bangalore, Karnataka</p>
-      <p><i class="fas fa-phone"></i> Phone: 6361673634</p>
-      <p><i class="fas fa-envelope"></i> Email: info@shreekara.com</p>
+      <p><i class="fas fa-phone"></i> 6361673634</p>
+      <p><i class="fas fa-envelope"></i> info@shreekara.com</p>
     </div>
   </div>
 
@@ -129,6 +139,7 @@
 </footer>
 
 <button id="backToTop" class="back-to-top"><i class="fas fa-arrow-up"></i></button>
+
 <script src="scripts/main.js"></script>
 </body>
 </html>
