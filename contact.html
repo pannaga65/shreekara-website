@@ -53,13 +53,19 @@
       <ul class="contact-info-list">
         <li>📍 Bangalore, Karnataka</li>
         <li>📞 6361673634</li>
-        <li>📧 info@shreekaratraders.com</li>
+        <li>📧 info@shreekara.com</li>
       </ul>
     </div>
 
     <div class="contact-card">
-      <form name="contact" method="POST" data-netlify="true">
-        
+
+      <!-- UPDATED FORM -->
+      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+
+        <!-- Required hidden field for Netlify -->
+        <input type="hidden" name="form-name" value="contact">
+        <input type="hidden" name="bot-field">
+
         <div class="form-row">
           <div>
             <label>Name</label>
@@ -100,7 +106,7 @@
     <div>
       <h4 class="footer-heading"><i class="fas fa-link"></i> Quick Links</h4>
       <p><a href="products.html"><i class="fas fa-angle-right"></i> Products</a></p>
-      <p><a href="clients.html"><i class="fas fa-angle-right"></i> Partners</a></p>
+      <p><a href="clients.html"><i class="fas a-angle-right"></i> Partners</a></p>
     </div>
 
     <div>
@@ -113,7 +119,7 @@
       <h4 class="footer-heading"><i class="fas fa-map-marker-alt"></i> Contact</h4>
       <p><i class="fas fa-home"></i> Bangalore, Karnataka</p>
       <p><i class="fas fa-phone"></i> Phone: 6361673634</p>
-      <p><i class="fas fa-envelope"></i> Email: info@shreekaratraders.com</p>
+      <p><i class="fas fa-envelope"></i> Email: info@shreekara.com</p>
     </div>
   </div>
 
