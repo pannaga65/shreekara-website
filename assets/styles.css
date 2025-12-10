@@ -1049,13 +1049,13 @@ ul {
 
 .logo-slider {
   display: flex;
-  width: calc(200% + 60px);
-  animation: scroll 30s linear infinite;
+  width: calc(400% + 100px);
+  animation: scroll 40s linear infinite;
 }
 
 .logo-slide {
   display: flex;
-  width: 50%;
+  width: 25%;
   justify-content: space-around;
   flex-shrink: 0;
   align-items: center;
@@ -1066,7 +1066,7 @@ ul {
   width: auto;
   max-width: 150px;
   object-fit: contain;
-  margin: 0 30px;
+  margin: 0 20px;
   filter: grayscale(100%);
   opacity: 0.7;
   transition: all 0.3s ease;
@@ -1083,20 +1083,7 @@ ul {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-50%);
-  }
-}
-
-/* Adjust animation speed for different screen sizes */
-@media (max-width: 768px) {
-  .logo-slider {
-    animation-duration: 25s;
-  }
-}
-
-@media (max-width: 576px) {
-  .logo-slider {
-    animation-duration: 20s;
+    transform: translateX(-25%);
   }
 }
 
@@ -1116,7 +1103,7 @@ ul {
   .partner-logo-img {
     height: 50px;
     max-width: 120px;
-    margin: 0 20px;
+    margin: 0 15px;
   }
 }
 
@@ -1125,10 +1112,28 @@ ul {
     height: 70px;
   }
   
+  .logo-slider {
+    width: calc(600% + 150px);
+    animation-duration: 35s;
+  }
+  
+  .logo-slide {
+    width: 16.66%;
+  }
+  
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-16.66%);
+    }
+  }
+  
   .partner-logo-img {
     height: 40px;
     max-width: 100px;
-    margin: 0 15px;
+    margin: 0 10px;
   }
 }
 
@@ -1137,10 +1142,40 @@ ul {
     height: 60px;
   }
   
+  .logo-slider {
+    width: calc(800% + 200px);
+    animation-duration: 30s;
+  }
+  
+  .logo-slide {
+    width: 12.5%;
+  }
+  
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-12.5%);
+    }
+  }
+  
   .partner-logo-img {
-    height: 35px;
-    max-width: 80px;
-    margin: 0 10px;
+    height: 30px;
+    max-width: 70px;
+    margin: 0 5px;
+  }
+}
+
+@media (max-width: 400px) {
+  .logo-slider-container {
+    height: 50px;
+  }
+  
+  .partner-logo-img {
+    height: 25px;
+    max-width: 60px;
+    margin: 0 3px;
   }
 }
 
