@@ -151,6 +151,56 @@
           "price": 4499
         }
       ]
+    },
+    {
+      "id": "skin-adhesive-glue",
+      "name": "Skin Adhesive Glue – Quick Wound Closure (Needle-Free)",
+      "brand": "—",
+      "supplier": "Shreekara Traders",
+      "category": "Wound Closure",
+      "image": "assets/images/skin-adhesive-glue.png",
+      "shortDescription": "Sterile medical glue used to close wounds and surgical incisions without stitches or staples. Forms a strong protective layer on the skin and supports clean healing.",
+      "uses": [
+        "Instantly seals wound edges",
+        "Reduces the need for sutures or staples",
+        "Minimally painful – no needle required",
+        "Water-resistant protective film",
+        "Excellent cosmetic outcome (less scarring)",
+        "No removal needed – naturally peels off"
+      ],
+      "clinicalBenefits": [
+        "Instantly seals wound edges",
+        "Reduces the need for sutures or staples",
+        "Minimally painful – no needle required",
+        "Water-resistant protective film",
+        "Excellent cosmetic outcome (less scarring)",
+        "No removal needed – naturally peels off"
+      ],
+      "usedIn": [
+        "General Surgery",
+        "Plastic & Cosmetic Procedures",
+        "Emergency & Trauma Care",
+        "Pediatric Wounds (child-friendly)",
+        "Dermatology & OPD Wound Closure"
+      ],
+      "variants": [
+        {
+          "id": "sag-10ml-5",
+          "label": "10 ml · Pack of 5",
+          "specification": "Standard",
+          "size": "10 ml",
+          "pack": "5",
+          "price": 1899
+        },
+        {
+          "id": "sag-20ml-5",
+          "label": "20 ml · Pack of 5",
+          "specification": "Large",
+          "size": "20 ml",
+          "pack": "5",
+          "price": 2999
+        }
+      ]
     }
   ]
 }

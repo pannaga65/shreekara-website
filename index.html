@@ -37,8 +37,11 @@
   
   <link rel="canonical" href="https://shreekaratraders.com/" />
   
-  <link rel="icon" type="image/png" href="assets/images/favicon.png" />
-  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png" />
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="96x96" href="assets/images/favicon-96x96.png" />
+  <link rel="shortcut icon" href="assets/images/favicon.ico" />
   
   <script type="application/ld+json">
   {
@@ -101,6 +104,41 @@
 </head>
 
 <body id="top">
+
+<!-- Announcement Bar -->
+<div class="announcement-bar" id="announcementBar">
+  <div class="container">
+    <div class="announcement-content">
+      <div class="announcement-slider">
+        <div class="announcement-track">
+          <!-- Original items -->
+          <div class="announcement-item">
+            <i class="fas fa-tag"></i> <strong>Limited Time Offer:</strong> 15% off on all silicone products. <a href="products.html#silicon-gel">Shop Now</a>
+          </div>
+          <div class="announcement-item">
+            <i class="fas fa-truck"></i> <strong>Free Shipping:</strong> On orders above ₹50,000 across Karnataka. <a href="products.html">Learn More</a>
+          </div>
+          <div class="announcement-item">
+            <i class="fas fa-gift"></i> <strong>New Arrivals:</strong> Check out our latest collagen innovations. <a href="products.html#collagen">View Products</a>
+          </div>
+          <!-- Duplicated items for seamless looping -->
+          <div class="announcement-item">
+            <i class="fas fa-tag"></i> <strong>Limited Time Offer:</strong> 15% off on all silicone products. <a href="products.html#silicon-gel">Shop Now</a>
+          </div>
+          <div class="announcement-item">
+            <i class="fas fa-truck"></i> <strong>Free Shipping:</strong> On orders above ₹50,000 across Karnataka. <a href="products.html">Learn More</a>
+          </div>
+          <div class="announcement-item">
+            <i class="fas fa-gift"></i> <strong>New Arrivals:</strong> Check out our latest collagen innovations. <a href="products.html#collagen">View Products</a>
+          </div>
+        </div>
+      </div>
+      <button class="announcement-close" id="closeAnnouncement" aria-label="Close announcement">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+  </div>
+</div>
 
 <header class="header">
   <div class="container">
@@ -186,15 +224,14 @@
         <div class="hero-image hero-image-photo">
           <img src="assets/images/hero-medical-supplies.png" alt="Medical supplies and wound care products" />
         </div>
-
-        <div class="hero-badge">
-          <div class="hero-badge-icon">
-            <i class="fas fa-truck"></i>
-          </div>
-          <div>
-            <strong>Fast Delivery</strong><br />
-            Reliable supply across Karnataka
-          </div>
+      </div>
+      <div class="hero-badge">
+        <div class="hero-badge-icon">
+          <i class="fas fa-truck"></i>
+        </div>
+        <div>
+          <strong>Fast Delivery</strong><br />
+          Reliable supply across Karnataka
         </div>
       </div>
     </div>
@@ -218,98 +255,62 @@
 
     <div class="cards-grid">
 
-      <div class="card product-card">
+      <div class="card compact-product-card" onclick="window.location.href='product.html?id=silicon-gel-sheet'">
         <div class="product-badge">Best Seller</div>
-        <img src="assets/images/silicon-gel-sheet.png" alt="Silicon Gel Sheet" class="product-image" />
-        <div class="card-header">
-          <h4 class="card-title">Silicon Gel Sheet</h4>
-          <p class="card-subtitle">Scar management for surgical & burn scars</p>
-        </div>
-        
-        <div class="product-price" data-product-price-for="silicon-gel-sheet"></div>
-
-        <ul class="product-features">
-          <li><i class="fas fa-check"></i> Reduces scar thickness</li>
-          <li><i class="fas fa-check"></i> Softens & flattens tissue</li>
-          <li><i class="fas fa-check"></i> Reusable & skin-friendly</li>
-        </ul>
-        <div class="card-footer product-footer-actions">
-          <button
-            class="btn btn-primary add-to-cart"
-            data-product-handle="silicon-gel-sheet">
-            <i class="fas fa-cart-plus"></i> Add to Cart
-          </button>
-        </div>
+        <img src="assets/images/silicon-gel-sheet.png" alt="Silicon Gel Sheet" class="compact-product-image" />
+        <h4 class="compact-product-title">Silicon Gel Sheet</h4>
+        <p class="compact-product-description">Scar management for surgical & burn scars</p>
+        <button
+          class="compact-add-to-cart add-to-cart"
+          data-product-handle="silicon-gel-sheet">
+          <i class="fas fa-cart-plus"></i> Add to Cart
+        </button>
       </div>
 
-      <div class="card product-card">
+      <div class="card compact-product-card" onclick="window.location.href='product.html?id=gelatin-sponge'">
         <div class="product-badge product-badge-new">New</div>
-        <img src="assets/images/gelatin-sponge.png" alt="Gelatin Sponge" class="product-image" />
-        <div class="card-header">
-          <h4 class="card-title">Gelatin Sponge</h4>
-          <p class="card-subtitle">Hemostatic sponge for surgical bleeding control</p>
-        </div>
-        
-        <div class="product-price" data-product-price-for="gelatin-sponge"></div>
-
-        <ul class="product-features">
-          <li><i class="fas fa-check"></i> Promotes clot formation</li>
-          <li><i class="fas fa-check"></i> Absorbs blood quickly</li>
-          <li><i class="fas fa-check"></i> Biodegradable material</li>
-        </ul>
-        <div class="card-footer product-footer-actions">
-          <button
-            class="btn btn-primary add-to-cart"
-            data-product-handle="gelatin-sponge">
-            <i class="fas fa-cart-plus"></i> Add to Cart
-          </button>
-        </div>
+        <img src="assets/images/gelatin-sponge.png" alt="Gelatin Sponge" class="compact-product-image" />
+        <h4 class="compact-product-title">Gelatin Sponge</h4>
+        <p class="compact-product-description">Hemostatic sponge for surgical bleeding control</p>
+        <button
+          class="compact-add-to-cart add-to-cart"
+          data-product-handle="gelatin-sponge">
+          <i class="fas fa-cart-plus"></i> Add to Cart
+        </button>
       </div>
 
-      <div class="card product-card">
-        <img src="assets/images/collagen-powder.png" alt="Collagen Powder" class="product-image" />
-        <div class="card-header">
-          <h4 class="card-title">Collagen Powder</h4>
-          <p class="card-subtitle">For chronic and non-healing wounds</p>
-        </div>
-        
-        <div class="product-price" data-product-price-for="collagen-powder"></div>
-
-        <ul class="product-features">
-          <li><i class="fas fa-check"></i> Boosts tissue regeneration</li>
-          <li><i class="fas fa-check"></i> Maintains moist environment</li>
-          <li><i class="fas fa-check"></i> Supports new skin formation</li>
-        </ul>
-        <div class="card-footer product-footer-actions">
-          <button
-            class="btn btn-primary add-to-cart"
-            data-product-handle="collagen-powder">
-            <i class="fas fa-cart-plus"></i> Add to Cart
-          </button>
-        </div>
+      <div class="card compact-product-card" onclick="window.location.href='product.html?id=collagen-powder'">
+        <img src="assets/images/collagen-powder.png" alt="Collagen Powder" class="compact-product-image" />
+        <h4 class="compact-product-title">Collagen Powder</h4>
+        <p class="compact-product-description">For chronic and non-healing wounds</p>
+        <button
+          class="compact-add-to-cart add-to-cart"
+          data-product-handle="collagen-powder">
+          <i class="fas fa-cart-plus"></i> Add to Cart
+        </button>
       </div>
 
-      <div class="card product-card">
-        <img src="assets/images/collagen-sheet.png" alt="Collagen Sheet" class="product-image" />
-        <div class="card-header">
-          <h4 class="card-title">Collagen Sheet</h4>
-          <p class="card-subtitle">Flat wounds, burns & surgical sites</p>
-        </div>
-        
-        <div class="product-price" data-product-price-for="collagen-sheet"></div>
+      <div class="card compact-product-card" onclick="window.location.href='product.html?id=collagen-sheet'">
+        <img src="assets/images/collagen-sheet.png" alt="Collagen Sheet" class="compact-product-image" />
+        <h4 class="compact-product-title">Collagen Sheet</h4>
+        <p class="compact-product-description">Flat wounds, burns & surgical sites</p>
+        <button
+          class="compact-add-to-cart add-to-cart"
+          data-product-handle="collagen-sheet">
+          <i class="fas fa-cart-plus"></i> Add to Cart
+        </button>
+      </div>
 
-        <ul class="product-features">
-          <li><i class="fas fa-check"></i> Provides immediate coverage</li>
-          <li><i class="fas fa-check"></i> Reduces pain and dressing changes</li>
-          <li><i class="fas fa-check"></i> Supports rapid tissue growth</li>
-        </ul>
-        <div class="card-footer product-footer-actions">
-          <button
-            class="btn btn-primary add-to-cart"
-            data-product-handle="collagen-sheet">
-            <i class="fas fa-cart-plus"></i> Add to Cart
-          </button>
-        </div>
+      <div class="card compact-product-card" onclick="window.location.href='product.html?id=skin-adhesive-glue'">
+        <div class="product-badge product-badge-new">New</div>
+        <img src="assets/images/skin-adhesive-glue.png" alt="Skin Adhesive Glue" class="compact-product-image" />
+        <h4 class="compact-product-title">Skin Adhesive Glue</h4>
+        <p class="compact-product-description">Needle-free wound closure</p>
+        <button
+          class="compact-add-to-cart add-to-cart"
+          data-product-handle="skin-adhesive-glue">
+          <i class="fas fa-cart-plus"></i> Add to Cart
+        </button>
       </div>
 
     </div>
@@ -360,50 +361,23 @@
 <section class="section section--alt">
   <div class="container">
     <h2 class="section-title text-center"><i class="fas fa-handshake"></i> Our Trusted Healthcare Partners</h2>
-    <p class="section-subtitle text-center">We work with innovative leaders in wound care & surgical technology</p>
-
-    <div class="partners-grid">
-      <div class="partner-card">
-        <div class="partner-logo">
-          <img src="assets/images/regenxgen-logo.png" alt="Regenxgen" />
+    <p class="section-subtitle text-center">We collaborate with industry leaders to bring you the best wound care solutions</p>
+    
+    <div class="logo-slider-container">
+      <div class="logo-slider">
+        <div class="logo-slide">
+          <img src="assets/images/regenxgen-logo.png" alt="Regenxgen" class="partner-logo-img" />
+          <img src="assets/images/eon-meditech-logo.png" alt="EON Meditech" class="partner-logo-img" />
+          <img src="assets/images/cologenesis-logo.png" alt="Cologenesis" class="partner-logo-img" />
+          <img src="assets/images/reevax-logo.png" alt="REEVAX" class="partner-logo-img" />
+          <img src="assets/images/eucare-logo.png" alt="EUCARE" class="partner-logo-img" />
         </div>
-        <h4 class="partner-name">Regenxgen</h4>
-        <p class="partner-description">Regenerative wound care solutions and advanced healing technologies.</p>
-        <div class="partner-specialty">
-          <i class="fas fa-microscope"></i> Regenerative Medicine
-        </div>
-      </div>
-
-      <div class="partner-card">
-        <div class="partner-logo">
-          <img src="assets/images/eon-meditech-logo.png" alt="EON Meditech" />
-        </div>
-        <h4 class="partner-name">EON Meditech</h4>
-        <p class="partner-description">Advanced surgical products and innovative medical devices.</p>
-        <div class="partner-specialty">
-          <i class="fas fa-stethoscope"></i> Surgical Innovation
-        </div>
-      </div>
-
-      <div class="partner-card">
-        <div class="partner-logo">
-          <img src="assets/images/cologenesis-logo.png" alt="Cologenesis" />
-        </div>
-        <h4 class="partner-name">Cologenesis Healthcare</h4>
-        <p class="partner-description">Collagen-based wound care products and tissue engineering.</p>
-        <div class="partner-specialty">
-          <i class="fas fa-dna"></i> Collagen Technology
-        </div>
-      </div>
-
-      <div class="partner-card">
-        <div class="partner-logo">
-          <img src="assets/images/reevax-logo.png" alt="REEVAX" />
-        </div>
-        <h4 class="partner-name">REEVAX</h4>
-        <p class="partner-description">Hemostatic surgical consumables and bleeding control solutions.</p>
-        <div class="partner-specialty">
-          <i class="fas fa-heartbeat"></i> Hemostatic Solutions
+        <div class="logo-slide">
+          <img src="assets/images/regenxgen-logo.png" alt="Regenxgen" class="partner-logo-img" />
+          <img src="assets/images/eon-meditech-logo.png" alt="EON Meditech" class="partner-logo-img" />
+          <img src="assets/images/cologenesis-logo.png" alt="Cologenesis" class="partner-logo-img" />
+          <img src="assets/images/reevax-logo.png" alt="REEVAX" class="partner-logo-img" />
+          <img src="assets/images/eucare-logo.png" alt="EUCARE" class="partner-logo-img" />
         </div>
       </div>
     </div>
@@ -457,7 +431,7 @@
       <h4 class="footer-heading"><i class="fas fa-map-marker-alt"></i> Contact</h4>
       <p><i class="fas fa-home"></i> Sheshagiri Nilaya, Heggadadevanapura,<br/>Madanayakanahalli, Bangalore – 562162</p>
       <p><i class="fas fa-phone"></i> <a href="tel:+916361673634">6361673634</a></p>
-      <p><i class="fas fa-envelope"></i> <a href="mailto:info@shreekaratraders.com">info@shreekaratraders.com</a></p>
+      <p><i class="fas fa-envelope"></i> <a href="mailto:info@shreekara.com">info@shreekara.com</a></p>
       <p><i class="fas fa-clock"></i> Mon-Sat: 9:00 AM - 6:00 PM</p>
     </div>
   </div>

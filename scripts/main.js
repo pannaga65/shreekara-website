@@ -176,3 +176,23 @@ document.addEventListener("DOMContentLoaded", function() {
     footerYear.textContent = footerYear.textContent.replace('2024', currentYear);
   }
 });
+
+// Announcement Bar Functionality
+document.addEventListener("DOMContentLoaded", function() {
+  const announcementBar = document.getElementById('announcementBar');
+  const closeBtn = document.getElementById('closeAnnouncement');
+  
+  // Check if user has closed the announcement bar
+  if (localStorage.getItem('announcementClosed')) {
+    announcementBar.style.display = 'none';
+    return;
+  }
+  
+  // Close button functionality
+  if (closeBtn) {
+    closeBtn.addEventListener('click', function() {
+      announcementBar.style.display = 'none';
+      localStorage.setItem('announcementClosed', 'true');
+    });
+  }
+});
