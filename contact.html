@@ -88,8 +88,7 @@
 <section class="section">
   <div class="container">
     <div class="contact-layout">
-      
-      <!-- LEFT COLUMN -->
+      <!-- LEFT COLUMN (Contact Info Card) -->
       <div class="contact-info-column">
         <div class="contact-info-card">
           <div class="contact-info-item">
@@ -131,7 +130,7 @@
             </div>
             <div class="contact-details">
               <h4 class="contact-label">Hours</h4>
-              <p class="contact-description">Mon–Sat: 9:00 AM — 6:00 PM</p>
+              <p class="contact-description">Mon–Sat: 9:00 AM – 6:00 PM</p>
             </div>
           </div>
         </div>
@@ -153,7 +152,7 @@
         </div>
       </div>
 
-      <!-- RIGHT COLUMN: NETLIFY FORM WORKING -->
+      <!-- RIGHT COLUMN (Form Card) -->
       <div class="contact-form-column">
         <div class="contact-form-card">
           <div class="form-header">
@@ -161,72 +160,69 @@
             <p class="form-subtitle">Our team will respond as soon as possible.</p>
           </div>
 
-          <!-- FINAL NETLIFY FORM -->
+          <!-- ✅ FIXED NETLIFY FORM -->
           <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-
-            <!-- Required Hidden Inputs -->
+            <!-- Required Hidden Inputs for Netlify -->
             <input type="hidden" name="form-name" value="contact">
-
-            <!-- Honeypot -->
-            <p style="display:none;">
-              <label>Don’t fill this out:
-                <input name="bot-field">
-              </label>
+            
+            <!-- Honeypot for spam protection (hidden from users) -->
+            <p hidden>
+              <label>Don't fill this out if you're human: <input name="bot-field" /></label>
             </p>
 
             <div class="form-row">
               <div class="form-group">
-                <label for="name">Name</label>
+                <label for="name">Name *</label>
                 <input type="text" id="name" name="name" required />
               </div>
 
               <div class="form-group">
-                <label for="email">Email</label>
+                <label for="email">Email *</label>
                 <input type="email" id="email" name="email" required />
               </div>
             </div>
 
             <div class="form-group">
               <label for="phone">Phone</label>
-              <input type="text" id="phone" name="phone" />
+              <input type="tel" id="phone" name="phone" />
             </div>
 
             <div class="form-group">
-              <label for="message">Message</label>
+              <label for="message">Message *</label>
               <textarea id="message" name="message" required></textarea>
             </div>
 
-            <!-- Checklist Section -->
+            <!-- CHECKLIST SECTION -->
             <div class="checklist-section">
               <h4 class="checklist-title">How can we help you?</h4>
               <div class="checklist-grid">
                 <div class="checklist-item">
-                  <input type="checkbox" id="bulk-order" name="help-type" value="Bulk Order Inquiry">
+                  <input type="checkbox" id="bulk-order" name="inquiry[]" value="Bulk Order Inquiry">
                   <label for="bulk-order">Bulk Order Inquiry</label>
                 </div>
                 
                 <div class="checklist-item">
-                  <input type="checkbox" id="hospital-supply" name="help-type" value="Hospital Supply Request">
+                  <input type="checkbox" id="hospital-supply" name="inquiry[]" value="Hospital Supply Request">
                   <label for="hospital-supply">Hospital Supply Request</label>
                 </div>
                 
                 <div class="checklist-item">
-                  <input type="checkbox" id="dealership" name="help-type" value="Dealership / Distributor Enquiry">
+                  <input type="checkbox" id="dealership" name="inquiry[]" value="Dealership Enquiry">
                   <label for="dealership">Dealership / Distributor Enquiry</label>
                 </div>
                 
                 <div class="checklist-item">
-                  <input type="checkbox" id="product-info" name="help-type" value="Product Information Request">
+                  <input type="checkbox" id="product-info" name="inquiry[]" value="Product Information">
                   <label for="product-info">Product Information Request</label>
                 </div>
                 
                 <div class="checklist-item">
-                  <input type="checkbox" id="pricing" name="help-type" value="Pricing / Quotation Request">
+                  <input type="checkbox" id="pricing" name="inquiry[]" value="Pricing Request">
                   <label for="pricing">Pricing / Quotation Request</label>
                 </div>
                 
                 <div class="checklist-item">
-                  <input type="checkbox" id="other" name="help-type" value="Other">
+                  <input type="checkbox" id="other" name="inquiry[]" value="Other">
                   <label for="other">Other</label>
                 </div>
               </div>
@@ -235,12 +231,9 @@
             <button class="btn btn-primary form-submit-btn" type="submit">
               <i class="fas fa-paper-plane"></i> Send Message
             </button>
-
           </form>
-
         </div>
       </div>
-
     </div>
   </div>
 </section>
@@ -250,36 +243,52 @@
   <div class="container footer-top">
     <div>
       <h4 class="footer-heading"><i class="fas fa-hospital"></i> Shreekara Traders</h4>
-      <p>Advanced wound care & surgical supplies distributor.</p>
+      <p>Advanced wound care & surgical supplies distributor across Karnataka. Your trusted partner in medical excellence.</p>
+      <div class="footer-social">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      </div>
     </div>
 
     <div>
       <h4 class="footer-heading"><i class="fas fa-link"></i> Quick Links</h4>
       <p><a href="products.html"><i class="fas fa-angle-right"></i> Products</a></p>
       <p><a href="clients.html"><i class="fas fa-angle-right"></i> Partners</a></p>
-    </div>
-
-    <div>
-      <h4 class="footer-heading"><i class="fas fa-info-circle"></i> Company</h4>
       <p><a href="about.html"><i class="fas fa-angle-right"></i> About Us</a></p>
       <p><a href="contact.html"><i class="fas fa-angle-right"></i> Contact</a></p>
     </div>
 
     <div>
+      <h4 class="footer-heading"><i class="fas fa-box"></i> Products</h4>
+      <p><a href="products.html#silicon-gel"><i class="fas fa-angle-right"></i> Silicon Gel Sheets</a></p>
+      <p><a href="products.html#gelatin"><i class="fas fa-angle-right"></i> Gelatin Sponges</a></p>
+      <p><a href="products.html#collagen"><i class="fas fa-angle-right"></i> Collagen Products</a></p>
+      <p><a href="products.html#surgical"><i class="fas fa-angle-right"></i> Surgical Supplies</a></p>
+    </div>
+
+    <div>
       <h4 class="footer-heading"><i class="fas fa-map-marker-alt"></i> Contact</h4>
-      <p><i class="fas fa-home"></i> Bangalore, Karnataka</p>
-      <p><i class="fas fa-phone"></i> 6361673634</p>
-      <p><i class="fas fa-envelope"></i> info@shreekara.com</p>
+      <p><i class="fas fa-home"></i> Sheshagiri Nilaya, Heggadadevanapura,<br/>Madanayakanahalli, Bangalore – 562162</p>
+      <p><i class="fas fa-phone"></i> <a href="tel:+916361673634">6361673634</a></p>
+      <p><i class="fas fa-envelope"></i> <a href="mailto:info@shreekara.com">info@shreekara.com</a></p>
+      <p><i class="fas fa-clock"></i> Mon-Sat: 9:00 AM - 6:00 PM</p>
       <p class="gst-info"><i class="fas fa-file-invoice"></i> GSTIN: 29AFSFS4060F1ZK</p>
     </div>
   </div>
 
   <div class="container footer-bottom">
-    <span>© 2025 Shreekara Traders. All Rights Reserved. </span>
+    <span>© 2025 Shreekara Traders. All Rights Reserved.</span>
+    <div class="footer-links">
+      <a href="#">Privacy Policy</a>
+      <span>|</span>
+      <a href="#">Terms of Service</a>
+    </div>
   </div>
 </footer>
 
-<button id="backToTop" class="back-to-top">
+<button id="backToTop" class="back-to-top" aria-label="Back to top">
   <i class="fas fa-arrow-up"></i>
 </button>
 
