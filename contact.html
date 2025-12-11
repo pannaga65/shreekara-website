@@ -84,65 +84,154 @@
   </div>
 </header>
 
-<!-- HERO -->
-<section class="page-hero">
-  <div class="container">
-    <h1 class="page-hero-title">Contact Us</h1>
-    <div class="breadcrumbs">Home / Contact</div>
-  </div>
-</section>
-
 <!-- CONTACT SECTION -->
 <section class="section">
-  <div class="container contact-wrapper">
-
-    <div>
-      <h3>Get in Touch</h3>
-      <ul class="contact-info-list">
-        <li><i class="fas fa-location-dot"></i> Bangalore, Karnataka</li>
-        <li><i class="fas fa-phone"></i> 6361673634</li>
-        <li><i class="fas fa-envelope"></i> info@shreekara.com</li>
-      </ul>
-    </div>
-
-    <div class="contact-card">
-
-      <!-- ✔✔✔ FINAL WORKING NETLIFY FORM -->
-      <form name="contact" method="POST" netlify netlify-honeypot="bot-field">
-
-        <!-- Required Hidden Inputs -->
-        <input type="hidden" name="form-name" value="contact">
-        <input type="hidden" name="bot-field">
-
-        <div class="form-row">
-          <div>
-            <label>Name</label>
-            <input type="text" name="name" required />
+  <div class="container">
+    <div class="contact-layout">
+      <!-- LEFT COLUMN (Contact Info Card) -->
+      <div class="contact-info-column">
+        <div class="contact-info-card">
+          <div class="contact-info-item">
+            <div class="contact-icon">
+              <i class="fas fa-location-dot"></i>
+            </div>
+            <div class="contact-details">
+              <h4 class="contact-label">Address</h4>
+              <p class="contact-description">
+                Sheshagiri Nilaya, Heggadadevanapura,<br>
+                Madanayakanahalli, Bangalore – 562162
+              </p>
+            </div>
           </div>
 
-          <div>
-            <label>Email</label>
-            <input type="email" name="email" required />
+          <div class="contact-info-item">
+            <div class="contact-icon">
+              <i class="fas fa-phone"></i>
+            </div>
+            <div class="contact-details">
+              <h4 class="contact-label">Phone</h4>
+              <p class="contact-description">6361673634</p>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="contact-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="contact-details">
+              <h4 class="contact-label">Email</h4>
+              <p class="contact-description">info@shreekara.com</p>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="contact-icon">
+              <i class="fas fa-clock"></i>
+            </div>
+            <div class="contact-details">
+              <h4 class="contact-label">Hours</h4>
+              <p class="contact-description">Mon–Sat: 9:00 AM — 6:00 PM</p>
+            </div>
           </div>
         </div>
 
-        <div>
-          <label>Phone</label>
-          <input type="text" name="phone" />
+        <!-- SOCIAL MEDIA ICONS -->
+        <div class="social-media-icons">
+          <a href="#" class="social-icon" aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="#" class="social-icon" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="#" class="social-icon" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="#" class="social-icon" aria-label="YouTube">
+            <i class="fab fa-youtube"></i>
+          </a>
         </div>
+      </div>
 
-        <div>
-          <label>Your Message</label>
-          <textarea name="message" required></textarea>
+      <!-- RIGHT COLUMN (Form Card) -->
+      <div class="contact-form-column">
+        <div class="contact-form-card">
+          <div class="form-header">
+            <h3 class="form-title">Got questions? We're here to help.</h3>
+            <p class="form-subtitle">Our team will respond as soon as possible.</p>
+          </div>
+
+          <!-- ✔✔✔ FINAL WORKING NETLIFY FORM -->
+          <form name="contact" method="POST" netlify netlify-honeypot="bot-field">
+            <!-- Required Hidden Inputs -->
+            <input type="hidden" name="form-name" value="contact">
+            <input type="hidden" name="bot-field">
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required />
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone</label>
+              <input type="text" id="phone" name="phone" />
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" required></textarea>
+            </div>
+
+            <!-- CHECKLIST SECTION -->
+            <div class="checklist-section">
+              <h4 class="checklist-title">How can we help you?</h4>
+              <div class="checklist-grid">
+                <div class="checklist-item">
+                  <input type="checkbox" id="bulk-order" name="help-type" value="Bulk Order Inquiry">
+                  <label for="bulk-order">Bulk Order Inquiry</label>
+                </div>
+                
+                <div class="checklist-item">
+                  <input type="checkbox" id="hospital-supply" name="help-type" value="Hospital Supply Request">
+                  <label for="hospital-supply">Hospital Supply Request</label>
+                </div>
+                
+                <div class="checklist-item">
+                  <input type="checkbox" id="dealership" name="help-type" value="Dealership / Distributor Enquiry">
+                  <label for="dealership">Dealership / Distributor Enquiry</label>
+                </div>
+                
+                <div class="checklist-item">
+                  <input type="checkbox" id="product-info" name="help-type" value="Product Information Request">
+                  <label for="product-info">Product Information Request</label>
+                </div>
+                
+                <div class="checklist-item">
+                  <input type="checkbox" id="pricing" name="help-type" value="Pricing / Quotation Request">
+                  <label for="pricing">Pricing / Quotation Request</label>
+                </div>
+                
+                
+                <div class="checklist-item">
+                  <input type="checkbox" id="other" name="help-type" value="Other">
+                  <label for="other">Other</label>
+                </div>
+              </div>
+            </div>
+
+            <button class="btn btn-primary form-submit-btn" type="submit">
+              <i class="fas fa-paper-plane"></i> Send Message
+            </button>
+          </form>
         </div>
-
-        <button class="btn btn-primary" type="submit">
-          <i class="fas fa-paper-plane"></i> Send Message
-        </button>
-      </form>
-
+      </div>
     </div>
-
   </div>
 </section>
 
@@ -171,11 +260,12 @@
       <p><i class="fas fa-home"></i> Bangalore, Karnataka</p>
       <p><i class="fas fa-phone"></i> 6361673634</p>
       <p><i class="fas fa-envelope"></i> info@shreekara.com</p>
+      <p class="gst-info"><i class="fas fa-file-invoice"></i> GSTIN: 29AFSFS4060F1ZK</p>
     </div>
   </div>
 
   <div class="container footer-bottom">
-    <span>© 2024 Shreekara Traders. All Rights Reserved.</span>
+    <span>© 2025 Shreekara Traders. All Rights Reserved. </span>
   </div>
 </footer>
 
