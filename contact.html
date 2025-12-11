@@ -160,10 +160,13 @@
             <p class="form-subtitle">Our team will respond as soon as possible.</p>
           </div>
 
-          <!-- ✅ FIXED NETLIFY FORM -->
-          <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <!-- ✅ FIXED NETLIFY FORM WITH CHECKBOX HANDLER -->
+          <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="return handleFormSubmit(event)">
             <!-- Required Hidden Inputs for Netlify -->
             <input type="hidden" name="form-name" value="contact">
+            
+            <!-- Hidden field to store selected inquiries -->
+            <input type="hidden" name="selected-inquiries" id="selected-inquiries">
             
             <!-- Honeypot for spam protection (hidden from users) -->
             <p hidden>
@@ -192,37 +195,37 @@
               <textarea id="message" name="message" required></textarea>
             </div>
 
-            <!-- ✅ FIXED CHECKLIST SECTION - Each checkbox now has unique name -->
+            <!-- ✅ CHECKLIST SECTION - Checkboxes won't be submitted directly -->
             <div class="checklist-section">
               <h4 class="checklist-title">How can we help you?</h4>
               <div class="checklist-grid">
                 <div class="checklist-item">
-                  <input type="checkbox" id="bulk-order" name="bulk-order" value="yes">
+                  <input type="checkbox" id="bulk-order" value="Bulk Order Inquiry">
                   <label for="bulk-order">Bulk Order Inquiry</label>
                 </div>
                 
                 <div class="checklist-item">
-                  <input type="checkbox" id="hospital-supply" name="hospital-supply" value="yes">
+                  <input type="checkbox" id="hospital-supply" value="Hospital Supply Request">
                   <label for="hospital-supply">Hospital Supply Request</label>
                 </div>
                 
                 <div class="checklist-item">
-                  <input type="checkbox" id="dealership" name="dealership" value="yes">
+                  <input type="checkbox" id="dealership" value="Dealership / Distributor Enquiry">
                   <label for="dealership">Dealership / Distributor Enquiry</label>
                 </div>
                 
                 <div class="checklist-item">
-                  <input type="checkbox" id="product-info" name="product-info" value="yes">
+                  <input type="checkbox" id="product-info" value="Product Information Request">
                   <label for="product-info">Product Information Request</label>
                 </div>
                 
                 <div class="checklist-item">
-                  <input type="checkbox" id="pricing" name="pricing" value="yes">
+                  <input type="checkbox" id="pricing" value="Pricing / Quotation Request">
                   <label for="pricing">Pricing / Quotation Request</label>
                 </div>
                 
                 <div class="checklist-item">
-                  <input type="checkbox" id="other" name="other-inquiry" value="yes">
+                  <input type="checkbox" id="other" value="Other">
                   <label for="other">Other</label>
                 </div>
               </div>
@@ -291,6 +294,24 @@
 <button id="backToTop" class="back-to-top" aria-label="Back to top">
   <i class="fas fa-arrow-up"></i>
 </button>
+
+<script>
+// Handle checkbox form submission
+function handleFormSubmit(event) {
+  // Get all checked checkboxes
+  const checkboxes = document.querySelectorAll('.checklist-section input[type="checkbox"]:checked');
+  
+  // Collect their values
+  const selectedValues = Array.from(checkboxes).map(cb => cb.value);
+  
+  // Store in hidden field
+  const hiddenField = document.getElementById('selected-inquiries');
+  hiddenField.value = selectedValues.length > 0 ? selectedValues.join(', ') : 'None';
+  
+  // Let form submit normally
+  return true;
+}
+</script>
 
 <script src="scripts/main.js"></script>
 </body>
