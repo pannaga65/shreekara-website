@@ -2503,3 +2503,9 @@ textarea:focus {
     font-size: 0.8rem;
   }
 }
+
+/* Adjust section padding for pages */
+.clients-page .section,
+.about-page .section {
+  padding-top: 4rem;
+}
