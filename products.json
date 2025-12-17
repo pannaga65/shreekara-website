@@ -2,48 +2,118 @@
   "products": [
     {
       "id": "silicon-gel-sheet",
-      "name": "Silicon Gel Sheet",
-      "brand": "—",
+      "name": "Silicone Gel Sheet – Advanced Scar Management",
+      "brand": "SCARXGEN",
+      "company": "Regenxgen Biosolutions Private Limited",
+      "ingredients": "100% Medical-grade Silicone",
       "supplier": "Shreekara Traders",
       "category": "Scar Management",
       "image": "assets/images/silicon-gel-sheet.png",
-      "shortDescription": "Reusable silicon gel sheets for post-surgical and burn scar management.",
+      "shortDescription": "Silicone Gel Sheet is a soft, transparent, self-adhesive medical dressing designed to improve the appearance of scars. It creates an optimal healing environment that helps flatten, soften, and fade scars over time.",
+      "overview": "Silicone Gel Sheet is a soft, transparent, self-adhesive medical dressing designed to improve the appearance of scars. It creates an optimal healing environment that helps flatten, soften, and fade scars over time.",
+      "indications": [
+        "-Hypertrophic scars",
+        "-Keloid scars",
+        "-Surgical scars",
+        "-Burn scars",
+        "-Trauma and accident scars",
+        "-C-section and cosmetic procedure scars",
+        "-Suitable for all skin types, including sensitive skin."
+      ],
+      "howItWorks": [
+        "-Forms a protective silicone layer over the scar",
+        "-Maintains hydration and regulates collagen production",
+        "-Reduces redness, thickness, and hardness of scars",
+        "-Improves scar elasticity and texture"
+      ],
+      "benefits": [
+        "-Clinically proven scar management",
+        "-Soft, flexible, and comfortable to wear",
+        "-Reusable and easy to maintain",
+        "-Non-invasive and painless therapy"
+      ],
+      "contraindications": [
+        "-Open wounds",
+        "-Fresh stitches",
+        "-Oozing or infected skin",
+        "-Active acne or broken skin"
+      ],
+      "usage": [
+        "Clean and dry the affected area",
+        "Apply the sheet directly over the scar",
+        "Wear for 8–12 hours daily",
+        "Wash with mild soap and reuse",
+        "Continue use for 6–8 weeks for best results"
+      ],
       "uses": [
-        "Reduces thickness of hypertrophic and keloid scars",
-        "Helps lighten redness and discoloration",
-        "Softens and flattens scar tissue over time"
+        "-Reduces thickness of hypertrophic and keloid scars",
+        "-Helps lighten redness and discoloration",
+        "-Softens and flattens scar tissue over time"
       ],
       "variants": [
         {
-          "id": "sgs-10x10-1",
-          "label": "10 × 10 cm · Pack of 1",
+          "id": "sgs-3x15-1",
+          "label": "3 cm × 15 cm · Pack of 1",
           "specification": "Standard",
-          "size": "10 × 10 cm",
+          "size": "3 cm × 15 cm",
           "pack": "1",
-          "price": 499
+          "mrp": 1230,
+          "offerPrice": 680
         },
         {
-          "id": "sgs-10x20-1",
-          "label": "10 × 20 cm · Pack of 1",
+          "id": "sgs-5x5-1",
+          "label": "5 cm × 5 cm · Pack of 1",
           "specification": "Standard",
-          "size": "10 × 20 cm",
+          "size": "5 cm × 5 cm",
           "pack": "1",
-          "price": 799
+          "mrp": 672,
+          "offerPrice": 480
+        },
+        {
+          "id": "sgs-6x12-1",
+          "label": "6 cm × 12 cm · Pack of 1",
+          "specification": "Standard",
+          "size": "6 cm × 12 cm",
+          "pack": "1",
+          "mrp": 1161,
+          "offerPrice": 600
         }
       ]
     },
     {
       "id": "gelatin-sponge",
-      "name": "Gelatin Sponge",
-      "brand": "Gelatino / Osseous",
+      "name": "Gelatin Sponge – Absorbable Hemostatic Sponge",
+      "brand": "GELATINO",
+      "company": "EON Meditech Pvt. Ltd.",
+      "ingredients": "Gelatin",
       "supplier": "EON Meditech",
       "category": "Absorbable Hemostatic",
       "image": "assets/images/gelatin-sponge.png",
-      "shortDescription": "Absorbable hemostatic sponges for intra-operative bleeding control.",
+      "shortDescription": "Gelatin Sponge is an absorbable hemostatic sponge used to control bleeding during surgical and medical procedures. It absorbs blood rapidly and supports natural clot formation.",
+      "overview": "Gelatin Sponge is an absorbable hemostatic sponge used to control bleeding during surgical and medical procedures. It absorbs blood rapidly and supports natural clot formation.",
+      "howItWorks": [
+        "-Absorbs blood instantly at the surgical site",
+        "-Expands on contact to apply gentle pressure",
+        "-Provides a matrix for clot formation",
+        "-Gradually dissolves inside the body"
+      ],
+      "benefits": [
+        "-Promotes rapid hemostasis",
+        "-Absorbs 20–40× its weight in blood",
+        "-Completely biodegradable",
+        "-Reduces surgical time and blood loss"
+      ],
+      "usedIn": [
+        "-General surgery",
+        "-Dental & oral surgery",
+        "-ENT procedures",
+        "-Orthopedic & trauma surgery",
+        "-Neurosurgery"
+      ],
       "uses": [
-        "Controls bleeding via mechanical hemostasis",
-        "Used in ENT, dental, general and anal surgeries",
-        "Completely biodegradable and absorbed by the body"
+        "-Controls bleeding via mechanical hemostasis",
+        "-Used in ENT, dental, general and anal surgeries",
+        "-Completely biodegradable and absorbed by the body"
       ],
       "variants": [
         {
@@ -51,39 +121,58 @@
           "label": "Standard · 80 × 50 × 10 mm · Pack of 10",
           "specification": "Standard",
           "size": "80 × 50 × 10 mm",
-          "pack": "10",
-          "price": 1299
+          "pack": "10"
         },
         {
           "id": "gs-dental-10x10x10-32",
           "label": "Dental · 10 × 10 × 10 mm · Pack of 32",
           "specification": "Dental",
           "size": "10 × 10 × 10 mm",
-          "pack": "32",
-          "price": 899
+          "pack": "32"
         },
         {
           "id": "gs-anal-80x50dia-6",
           "label": "Anal · 80 × 50 mm Dia · Pack of 6",
           "specification": "Anal",
           "size": "80 × 50 mm Dia",
-          "pack": "6",
-          "price": 1499
+          "pack": "6"
         }
       ]
     },
     {
       "id": "collagen-powder",
-      "name": "Collagen Powder",
-      "brand": "BioFil",
+      "name": "Collagen Powder – Chronic & Non-Healing Wounds",
+      "brand": "Collofiber-MM",
+      "company": "Cologenesis Healthcare Pvt. Ltd.",
+      "ingredients": "Collagen",
       "supplier": "EUCARE",
       "category": "Advanced Wound Care",
       "image": "assets/images/collagen-powder.png",
-      "shortDescription": "Collagen particles for chronic and non-healing wounds.",
+      "shortDescription": "Collagen Powder is designed for advanced wound care, especially chronic and non-healing wounds. It stimulates healthy granulation tissue and accelerates wound healing.",
+      "overview": "Collagen Powder is designed for advanced wound care, especially chronic and non-healing wounds. It stimulates healthy granulation tissue and accelerates wound healing.",
+      "howItWorks": [
+        "-Forms a natural collagen layer on the wound",
+        "-Absorbs excess exudates",
+        "-Maintains a moist wound environment",
+        "-Supports rapid tissue regeneration"
+      ],
+      "benefits": [
+        "-Enhances granulation and epithelialization",
+        "-Reduces healing time",
+        "-Minimizes dressing frequency",
+        "-Provides painless wound coverage"
+      ],
+      "usedIn": [
+        "-Diabetic ulcers",
+        "-Pressure sores",
+        "-Burn wounds",
+        "-Post-surgical wounds",
+        "-Chronic non-healing wounds"
+      ],
       "uses": [
-        "Promotes granulation and tissue regeneration",
-        "Maintains a moist wound environment",
-        "Ideal for diabetic ulcers, pressure sores and chronic wounds"
+        "-Promotes granulation and tissue regeneration",
+        "-Maintains a moist wound environment",
+        "-Ideal for diabetic ulcers, pressure sores and chronic wounds"
       ],
       "variants": [
         {
@@ -91,47 +180,65 @@
           "label": "Particles · 5 ml · Pack of 10",
           "specification": "Particles",
           "size": "5 ml",
-          "pack": "10",
-          "price": 1999
+          "pack": "10"
         },
         {
           "id": "cp-particles-10ml-10",
           "label": "Particles · 10 ml · Pack of 10",
           "specification": "Particles",
           "size": "10 ml",
-          "pack": "10",
-          "price": 2499
+          "pack": "10"
         },
         {
           "id": "cp-particles-ab-5ml-10",
           "label": "Particles AB (with Antibiotics) · 5 ml · Pack of 10",
           "specification": "Particles AB",
           "size": "5 ml",
-          "pack": "10",
-          "price": 2199
+          "pack": "10"
         },
         {
           "id": "cp-particles-ab-10ml-10",
           "label": "Particles AB (with Antibiotics) · 10 ml · Pack of 10",
           "specification": "Particles AB",
           "size": "10 ml",
-          "pack": "10",
-          "price": 2699
+          "pack": "10"
         }
       ]
     },
     {
       "id": "collagen-sheet",
-      "name": "Collagen Sheet",
-      "brand": "BioFil-AB",
+      "name": "Collagen Sheet – Flat Surface Wounds",
+      "brand": "Collofiber-MM",
+      "company": "Cologenesis Healthcare Pvt. Ltd.",
+      "ingredients": "Collagen",
       "supplier": "EUCARE",
       "category": "Advanced Wound Care",
       "image": "assets/images/collagen-sheet.png",
-      "shortDescription": "Collagen sheets for flat surgical wounds, burns and trauma.",
+      "shortDescription": "Collagen Sheet is a thin, flexible collagen dressing for flat wounds. It provides immediate coverage and creates an ideal healing environment.",
+      "overview": "Collagen Sheet is a thin, flexible collagen dressing for flat wounds. It provides immediate coverage and creates an ideal healing environment.",
+      "howItWorks": [
+        "-Forms a protective collagen layer",
+        "-Absorbs wound exudates",
+        "-Maintains moisture balance",
+        "-Encourages new tissue growth"
+      ],
+      "benefits": [
+        "-Easy and comfortable to apply",
+        "-Reduces pain and dressing changes",
+        "-Supports faster wound healing",
+        "-Suitable for sensitive skin"
+      ],
+      "usedIn": [
+        "-Surgical incisions",
+        "-Flat chronic wounds",
+        "-Abrasions and skin tears",
+        "-Pressure sores",
+        "-Burn and trauma wounds"
+      ],
       "uses": [
-        "Provides immediate wound coverage",
-        "Maintains optimal moisture and supports tissue growth",
-        "Reduces pain and dressing frequency"
+        "-Provides immediate wound coverage",
+        "-Maintains optimal moisture and supports tissue growth",
+        "-Reduces pain and dressing frequency"
       ],
       "variants": [
         {
@@ -139,49 +246,64 @@
           "label": "5 × 5 cm · Pack of 10",
           "specification": "Sheet",
           "size": "5 × 5 cm",
-          "pack": "10",
-          "price": 2999
+          "pack": "10"
         },
         {
           "id": "cs-10x10-10",
           "label": "10 × 10 cm · Pack of 10",
           "specification": "Sheet",
           "size": "10 × 10 cm",
-          "pack": "10",
-          "price": 4499
+          "pack": "10"
         }
       ]
     },
     {
       "id": "skin-adhesive-glue",
-      "name": "Skin Adhesive Glue – Quick Wound Closure (Needle-Free)",
-      "brand": "—",
+      "name": "Skin Adhesive Glue – Needle-Free Wound Closure",
+      "brand": "XOIN",
+      "company": "REEVAX Pharma",
+      "ingredients": "Cyanoacrylate",
       "supplier": "Shreekara Traders",
       "category": "Wound Closure",
       "image": "assets/images/skin-adhesive-glue.png",
-      "shortDescription": "Sterile medical glue used to close wounds and surgical incisions without stitches or staples. Forms a strong protective layer on the skin and supports clean healing.",
-      "uses": [
-        "Instantly seals wound edges",
-        "Reduces the need for sutures or staples",
-        "Minimally painful – no needle required",
-        "Water-resistant protective film",
-        "Excellent cosmetic outcome (less scarring)",
-        "No removal needed – naturally peels off"
+      "shortDescription": "Skin Adhesive is a sterile, fast-acting medical glue used to close small wounds and surgical incisions without sutures or staples.",
+      "overview": "Skin Adhesive is a sterile, fast-acting medical glue used to close small wounds and surgical incisions without sutures or staples.",
+      "howItWorks": [
+        "-Bonds skin edges securely",
+        "-Forms a waterproof protective barrier",
+        "-Prevents bacterial entry",
+        "-Naturally peels off as healing occurs"
       ],
-      "clinicalBenefits": [
-        "Instantly seals wound edges",
-        "Reduces the need for sutures or staples",
-        "Minimally painful – no needle required",
-        "Water-resistant protective film",
-        "Excellent cosmetic outcome (less scarring)",
-        "No removal needed – naturally peels off"
+      "benefits": [
+        "-Quick and painless wound closure",
+        "-Eliminates need for stitches in minor wounds",
+        "-Reduces scarring",
+        "-Water-resistant after curing",
+        "-Improves patient comfort"
       ],
       "usedIn": [
-        "General Surgery",
-        "Plastic & Cosmetic Procedures",
-        "Emergency & Trauma Care",
-        "Pediatric Wounds (child-friendly)",
-        "Dermatology & OPD Wound Closure"
+        "-Small surgical incisions",
+        "-Lacerations and minor cuts",
+        "-Cosmetic procedures",
+        "-Pediatric wound care",
+        "-Dermatology procedures",
+        "-Emergency wound management"
+      ],
+      "uses": [
+        "-Instantly seals wound edges",
+        "-Reduces the need for sutures or staples",
+        "-Minimally painful – no needle required",
+        "-Water-resistant protective film",
+        "-Excellent cosmetic outcome (less scarring)",
+        "-No removal needed – naturally peels off"
+      ],
+      "clinicalBenefits": [
+        "-Instantly seals wound edges",
+        "-Reduces the need for sutures or staples",
+        "-Minimally painful – no needle required",
+        "-Water-resistant protective film",
+        "-Excellent cosmetic outcome (less scarring)",
+        "-No removal needed – naturally peels off"
       ],
       "variants": [
         {
@@ -189,16 +311,14 @@
           "label": "10 ml · Pack of 5",
           "specification": "Standard",
           "size": "10 ml",
-          "pack": "5",
-          "price": 1899
+          "pack": "5"
         },
         {
           "id": "sag-20ml-5",
           "label": "20 ml · Pack of 5",
           "specification": "Large",
           "size": "20 ml",
-          "pack": "5",
-          "price": 2999
+          "pack": "5"
         }
       ]
     }

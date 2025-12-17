@@ -272,33 +272,27 @@
         <img src="assets/images/gelatin-sponge.png" alt="Gelatin Sponge" class="compact-product-image" />
         <h4 class="compact-product-title">Gelatin Sponge</h4>
         <p class="compact-product-description">Hemostatic sponge for surgical bleeding control</p>
-        <button
-          class="compact-add-to-cart add-to-cart"
-          data-product-handle="gelatin-sponge">
-          <i class="fas fa-cart-plus"></i> Add to Cart
-        </button>
+        <a href="contact.html?product=gelatin-sponge" class="get-quote-btn">
+          <i class="fas fa-file-alt"></i> Get Quote
+        </a>
       </div>
 
       <div class="card compact-product-card" onclick="window.location.href='product.html?id=collagen-powder'">
         <img src="assets/images/collagen-powder.png" alt="Collagen Powder" class="compact-product-image" />
         <h4 class="compact-product-title">Collagen Powder</h4>
         <p class="compact-product-description">For chronic and non-healing wounds</p>
-        <button
-          class="compact-add-to-cart add-to-cart"
-          data-product-handle="collagen-powder">
-          <i class="fas fa-cart-plus"></i> Add to Cart
-        </button>
+        <a href="contact.html?product=collagen-powder" class="get-quote-btn">
+          <i class="fas fa-file-alt"></i> Get Quote
+        </a>
       </div>
 
       <div class="card compact-product-card" onclick="window.location.href='product.html?id=collagen-sheet'">
         <img src="assets/images/collagen-sheet.png" alt="Collagen Sheet" class="compact-product-image" />
         <h4 class="compact-product-title">Collagen Sheet</h4>
         <p class="compact-product-description">Flat wounds, burns & surgical sites</p>
-        <button
-          class="compact-add-to-cart add-to-cart"
-          data-product-handle="collagen-sheet">
-          <i class="fas fa-cart-plus"></i> Add to Cart
-        </button>
+        <a href="contact.html?product=collagen-sheet" class="get-quote-btn">
+          <i class="fas fa-file-alt"></i> Get Quote
+        </a>
       </div>
 
       <div class="card compact-product-card" onclick="window.location.href='product.html?id=skin-adhesive-glue'">
@@ -306,11 +300,9 @@
         <img src="assets/images/skin-adhesive-glue.png" alt="Skin Adhesive Glue" class="compact-product-image" />
         <h4 class="compact-product-title">Skin Adhesive Glue</h4>
         <p class="compact-product-description">Needle-free wound closure</p>
-        <button
-          class="compact-add-to-cart add-to-cart"
-          data-product-handle="skin-adhesive-glue">
-          <i class="fas fa-cart-plus"></i> Add to Cart
-        </button>
+        <a href="contact.html?product=skin-adhesive-glue" class="get-quote-btn">
+          <i class="fas fa-file-alt"></i> Get Quote
+        </a>
       </div>
 
     </div>
@@ -450,9 +442,9 @@
   <div class="container footer-bottom">
     <span>© 2024 Shreekara Traders. All Rights Reserved.</span>
     <div class="footer-links">
-      <a href="#">Privacy Policy</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
       <span>|</span>
-      <a href="#">Terms of Service</a>
+      <a href="terms-of-service.html">Terms of Service</a>
     </div>
   </div>
 </footer>
@@ -466,11 +458,19 @@
   </div>
 </div>
 
-<button id="backToTop" class="back-to-top" aria-label="Back to top">
-  <i class="fas fa-arrow-up"></i>
-</button>
-
-<script src="scripts/main.js"></script>
+<!-- Floating Action Buttons -->
+<div class="floating-buttons">
+  <a href="contact.html" class="floating-contact-btn" aria-label="Contact Us">
+    <i class="fas fa-envelope"></i>
+  </a>
+  <a href="https://wa.me/916361673634?text=Hello%20I%20would%20like%20to%20enquire%20about%20your%20medical%20products" 
+     class="floating-whatsapp-btn" 
+     aria-label="Chat on WhatsApp" 
+     target="_blank" 
+     rel="noopener noreferrer">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+</div><script src="scripts/main.js"></script>
 <script src="scripts/products.js"></script>
 
 </body>

@@ -112,11 +112,11 @@
       <!-- Silicon Gel Sheet -->
       <div class="card compact-product-card" onclick="window.location.href='product.html?id=silicon-gel-sheet'">
         <img src="assets/images/silicon-gel-sheet.png" alt="Silicon Gel Sheet" class="compact-product-image" />
-        <h3 class="compact-product-title">Silicon Gel Sheet</h3>
-        <p class="compact-product-description">Scar management · Surgical & burn scars</p>
+        <h3 class="compact-product-title">Silicone Gel Sheet</h3>
+        <p class="compact-product-description">Advanced Scar Management</p>
         <button class="compact-add-to-cart add-to-cart"
-          data-product-handle="silicon-gel-sheet">
-          <i class="fas fa-cart-plus"></i> Add to Cart
+          onclick="event.stopPropagation(); window.location.href='product.html?id=silicon-gel-sheet';">
+          <i class="fas fa-eye"></i> View Details
         </button>
       </div>
 
@@ -125,9 +125,9 @@
         <img src="assets/images/gelatin-sponge.png" alt="Gelatin Sponge" class="compact-product-image" />
         <h3 class="compact-product-title">Gelatin Sponge</h3>
         <p class="compact-product-description">Absorbable Hemostatic Sponge</p>
-        <button class="compact-add-to-cart add-to-cart"
-          data-product-handle="gelatin-sponge">
-          <i class="fas fa-cart-plus"></i> Add to Cart
+        <button class="compact-add-to-cart get-quote-btn"
+          onclick="event.stopPropagation(); window.location.href='contact.html?product=gelatin-sponge';">
+          <i class="fas fa-file-alt"></i> Get Quote
         </button>
       </div>
 
@@ -136,9 +136,9 @@
         <img src="assets/images/collagen-powder.png" alt="Collagen Powder" class="compact-product-image" />
         <h3 class="compact-product-title">Collagen Powder</h3>
         <p class="compact-product-description">BioFil Collagen · Chronic Wound Care</p>
-        <button class="compact-add-to-cart add-to-cart"
-          data-product-handle="collagen-powder">
-          <i class="fas fa-cart-plus"></i> Add to Cart
+        <button class="compact-add-to-cart get-quote-btn"
+          onclick="event.stopPropagation(); window.location.href='contact.html?product=collagen-powder';">
+          <i class="fas fa-file-alt"></i> Get Quote
         </button>
       </div>
 
@@ -147,9 +147,9 @@
         <img src="assets/images/collagen-sheet.png" alt="Collagen Sheet" class="compact-product-image" />
         <h3 class="compact-product-title">Collagen Sheet</h3>
         <p class="compact-product-description">BioFil-AB Collagen Sheets</p>
-        <button class="compact-add-to-cart add-to-cart"
-          data-product-handle="collagen-sheet">
-          <i class="fas fa-cart-plus"></i> Add to Cart
+        <button class="compact-add-to-cart get-quote-btn"
+          onclick="event.stopPropagation(); window.location.href='contact.html?product=collagen-sheet';">
+          <i class="fas fa-file-alt"></i> Get Quote
         </button>
       </div>
 
@@ -159,9 +159,9 @@
         <img src="assets/images/skin-adhesive-glue.png" alt="Skin Adhesive Glue" class="compact-product-image" />
         <h3 class="compact-product-title">Skin Adhesive Glue</h3>
         <p class="compact-product-description">Needle-Free Wound Closure</p>
-        <button class="compact-add-to-cart add-to-cart"
-          data-product-handle="skin-adhesive-glue">
-          <i class="fas fa-cart-plus"></i> Add to Cart
+        <button class="compact-add-to-cart get-quote-btn"
+          onclick="event.stopPropagation(); window.location.href='contact.html?product=skin-adhesive-glue';">
+          <i class="fas fa-file-alt"></i> Get Quote
         </button>
       </div>
 
@@ -210,6 +210,11 @@
 
   <div class="container footer-bottom">
     <span>© 2025 Shreekara Traders. All Rights Reserved.</span>
+    <div class="footer-links">
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <span>|</span>
+      <a href="terms-of-service.html">Terms of Service</a>
+    </div>
   </div>
 </footer>
 
@@ -226,6 +231,21 @@
 <button id="backToTop" class="back-to-top">
   <i class="fas fa-arrow-up"></i>
 </button>
+
+<!-- Floating Action Buttons -->
+<div class="floating-buttons">
+  <a href="contact.html" class="floating-contact-btn" aria-label="Contact Us">
+    <i class="fas fa-envelope"></i>
+    
+  </a>
+  <a href="https://wa.me/916361673634?text=Hello%20I%20would%20like%20to%20enquire%20about%20your%20medical%20products" 
+     class="floating-whatsapp-btn" 
+     aria-label="Chat on WhatsApp" 
+     target="_blank" 
+     rel="noopener noreferrer">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+</div>
 
 <!-- SCRIPTS -->
 <script src="scripts/main.js"></script>

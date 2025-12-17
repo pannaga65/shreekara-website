@@ -68,10 +68,25 @@ async function showProductInModal(productId) {
 
   const variantOptions = product.variants
     .map(
-      (v) =>
-        `<option value="${v.id}">
-          ${v.label} — ${formatPrice(v.price)}
-        </option>`
+      (v) => {
+        if (v.offerPrice !== undefined) {
+          // For Silicone Gel Sheet, show MRP and offer price
+          const discount = Math.round(((v.mrp - v.offerPrice) / v.mrp) * 100);
+          return `<option value="${v.id}">
+            ${v.label} — <span style="text-decoration: line-through;">${formatPrice(v.mrp)}</span> ${formatPrice(v.offerPrice)} (${discount}% OFF)
+          </option>`;
+        } else if (v.price !== undefined) {
+          // For other products with price, show just price
+          return `<option value="${v.id}">
+            ${v.label} — ${formatPrice(v.price)}
+          </option>`;
+        } else {
+          // For other products without price
+          return `<option value="${v.id}">
+            ${v.label}
+          </option>`;
+        }
+      }
     )
     .join("");
 
@@ -105,14 +120,21 @@ async function showProductInModal(productId) {
           </select>
         </div>
 
-        <div class="product-modal-price">
-          <span class="product-modal-price-label">Price: </span>
-          <span class="product-modal-price-value">—</span>
+        ${product.id === 'silicon-gel-sheet' ? `
+        <div class="product-modal-pricing">
+          <span class="product-modal-mrp">${formatPrice(product.variants[0].mrp)}</span>
+          <span class="product-modal-price-value">${formatPrice(product.variants[0].offerPrice)}</span>
+          <span class="product-modal-discount">${Math.round(((product.variants[0].mrp - product.variants[0].offerPrice) / product.variants[0].mrp) * 100)}% OFF</span>
         </div>
 
         <button class="btn btn-primary" id="modalAddToCart">
           <i class="fas fa-cart-plus"></i> Add to Cart
         </button>
+        ` : `
+        <a href="contact.html?product=${encodeURIComponent(product.id)}" class="btn btn-outline-dark">
+          <i class="fas fa-file-alt"></i> Get Quote
+        </a>
+        `}
 
         <a href="product.html?id=${product.id}" class="btn btn-outline-dark product-modal-link">
           <i class="fas fa-file-medical-alt"></i> View Full Details
@@ -126,12 +148,18 @@ async function showProductInModal(productId) {
   const addBtn = document.getElementById("modalAddToCart");
 
   function updatePriceDisplay() {
-    const variantId = variantSelect.value;
-    const variant = product.variants.find((v) => v.id === variantId);
-    if (variant) {
-      priceEl.textContent = formatPrice(variant.price);
-    } else {
-      priceEl.textContent = "—";
+    // Only update price display for Silicone Gel Sheet
+    if (product.id === 'silicon-gel-sheet') {
+      const variantId = variantSelect.value;
+      const variant = product.variants.find((v) => v.id === variantId);
+      if (variant) {
+        if (variant.offerPrice !== undefined) {
+          // For Silicone Gel Sheet, show offer price
+          priceEl.textContent = formatPrice(variant.offerPrice);
+        }
+      } else {
+        priceEl.textContent = "—";
+      }
     }
   }
 
@@ -150,18 +178,23 @@ async function showProductInModal(productId) {
       }
 
       const variant = product.variants.find((v) => v.id === variantId);
+              
+      // Add to cart - only for Silicone Gel Sheet
+      if (product.id === 'silicon-gel-sheet') {
+        if (typeof cartCount === "number") {
+          cartCount += 1;
+          if (typeof updateCartUI === "function") updateCartUI();
+        }
       
-      // Add to cart
-      if (typeof cartCount === "number") {
-        cartCount += 1;
-        if (typeof updateCartUI === "function") updateCartUI();
+        const msg = `${product.name} (${variant.label}) added to cart!`;
+        if (typeof showNotification === "function") {
+          showNotification(msg, "success");
+        }
+      } else {
+        // For other products, redirect to contact page
+        window.location.href = `contact.html?product=${encodeURIComponent(product.id)}`;
       }
-
-      const msg = `${product.name} (${variant.label}) added to cart!`;
-      if (typeof showNotification === "function") {
-        showNotification(msg, "success");
-      }
-
+      
       closeProductModal();
     });
   }
@@ -179,9 +212,13 @@ async function populateCardPrices() {
     const product = data.products.find((p) => p.id === id);
     if (!product || !product.variants || !product.variants.length) return;
 
+    // For Silicone Gel Sheet, use offerPrice; for others, use price
     const prices = product.variants
-      .map((v) => v.price)
+      .map((v) => v.offerPrice !== undefined ? v.offerPrice : v.price)
       .filter((p) => typeof p === "number");
+
+    // If no prices available (for non-Silicone Gel Sheet products), return early
+    if (prices.length === 0) return;
 
     if (!prices.length) return;
 
@@ -282,6 +319,7 @@ function initializeGallery() {
   
   if (!thumbnails.length || !mainImage) return;
   
+  // Set up click handlers for thumbnails
   thumbnails.forEach(thumb => {
     thumb.addEventListener('click', function() {
       // Update active thumbnail
@@ -294,6 +332,13 @@ function initializeGallery() {
         mainImage.src = src;
       }
     });
+  });
+  
+  // Preload images to prevent layout shifts
+  // This ensures smooth transitions when switching between thumbnails
+  thumbnails.forEach(thumb => {
+    const img = new Image();
+    img.src = thumb.getAttribute('data-src');
   });
 }
 
@@ -322,7 +367,9 @@ function initializeEventListeners() {
 function initializeVariantSelection() {
   const variantButtons = document.querySelectorAll('.variant-btn');
   const priceDisplay = document.querySelector('.product-price');
-  const addToCartBtn = document.querySelector('.add-to-cart-btn');
+  const mrpDisplay = document.querySelector('.product-modal-mrp');
+  const discountDisplay = document.querySelector('.product-modal-discount');
+  const singleBuyNowBtn = document.getElementById('singleBuyNowBtn'); // Single Buy Now button
   
   if (!variantButtons.length) return;
   
@@ -332,15 +379,23 @@ function initializeVariantSelection() {
     firstButton.classList.add('selected');
     
     // Update price display with first variant's price
+    const firstMrp = firstButton.getAttribute('data-mrp');
+    const firstOfferPrice = firstButton.getAttribute('data-offer-price');
     const firstPrice = firstButton.getAttribute('data-price');
-    if (firstPrice && priceDisplay) {
-      priceDisplay.textContent = formatPrice(Number(firstPrice));
+    
+    if (firstMrp && firstOfferPrice && mrpDisplay && priceDisplay && discountDisplay) {
+      // Silicone Gel Sheet with MRP and offer price
+      mrpDisplay.textContent = formatPrice(Number(firstMrp));
+      priceDisplay.textContent = formatPrice(Number(firstOfferPrice));
+      const discount = Math.round(((Number(firstMrp) - Number(firstOfferPrice)) / Number(firstMrp)) * 100);
+      discountDisplay.textContent = `${discount}% OFF`;
     }
     
-    // Store selected variant ID in the Add to Cart button
-    const variantId = firstButton.getAttribute('data-variant-id');
-    if (addToCartBtn && variantId) {
-      addToCartBtn.setAttribute('data-variant-id', variantId);
+    // Update the Buy Now button with the first variant's data
+    if (singleBuyNowBtn) {
+      singleBuyNowBtn.setAttribute('data-selected-variant', firstButton.getAttribute('data-variant-id'));
+      // In future, this would be set to the variant's amazonLink
+      singleBuyNowBtn.setAttribute('data-amazon-link', '');
     }
   }
   
@@ -354,54 +409,44 @@ function initializeVariantSelection() {
       this.classList.add('selected');
       
       // Update price display
+      const mrp = this.getAttribute('data-mrp');
+      const offerPrice = this.getAttribute('data-offer-price');
       const price = this.getAttribute('data-price');
-      if (price && priceDisplay) {
-        // Convert price to number before formatting
-        priceDisplay.textContent = formatPrice(Number(price));
+      
+      if (mrp && offerPrice && mrpDisplay && priceDisplay && discountDisplay) {
+        // Silicone Gel Sheet with MRP and offer price
+        mrpDisplay.textContent = formatPrice(Number(mrp));
+        priceDisplay.textContent = formatPrice(Number(offerPrice));
+        const discount = Math.round(((Number(mrp) - Number(offerPrice)) / Number(mrp)) * 100);
+        discountDisplay.textContent = `${discount}% OFF`;
       }
       
-      // Store selected variant ID in the Add to Cart button
-      const variantId = this.getAttribute('data-variant-id');
-      if (addToCartBtn && variantId) {
-        addToCartBtn.setAttribute('data-variant-id', variantId);
+      // Update the Buy Now button with the selected variant's data
+      if (singleBuyNowBtn) {
+        singleBuyNowBtn.setAttribute('data-selected-variant', this.getAttribute('data-variant-id'));
+        // In future, this would be set to the variant's amazonLink
+        singleBuyNowBtn.setAttribute('data-amazon-link', '');
       }
     });
   });
   
-  // Add event listener to Add to Cart button
-  if (addToCartBtn) {
-    addToCartBtn.addEventListener('click', function() {
-      const productId = this.getAttribute('data-product-id');
-      const variantId = this.getAttribute('data-variant-id');
-      
-      // For now, we'll just show a notification
-      // In a real implementation, this would add the product to the cart
-      showNotification(`Added to cart: Product ${productId}, Variant ${variantId}`, 'success');
+  // Add event listener to the single Buy Now button
+  // This button does not redirect for now as per requirements
+  if (singleBuyNowBtn) {
+    singleBuyNowBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      // Do nothing - no redirect, no alert, no console log as per requirements
+      // Button is enabled visually but has no action
+      // The selected variant is stored in the data-selected-variant attribute
+      return false;
     });
   }
 }
 
-// Initialize quantity selector functionality
+// Initialize quantity selector functionality (removed for cart removal)
 function initializeQuantitySelector() {
-  const minusBtn = document.querySelector('.qty-btn.minus');
-  const plusBtn = document.querySelector('.qty-btn.plus');
-  const qtyValue = document.querySelector('.qty-value');
-  
-  if (!minusBtn || !plusBtn || !qtyValue) return;
-  
-  minusBtn.addEventListener('click', function() {
-    let qty = parseInt(qtyValue.textContent);
-    if (qty > 1) {
-      qty--;
-      qtyValue.textContent = qty;
-    }
-  });
-  
-  plusBtn.addEventListener('click', function() {
-    let qty = parseInt(qtyValue.textContent);
-    qty++;
-    qtyValue.textContent = qty;
-  });
+  // Removed as part of cart functionality removal
+  // Quantity selectors are no longer needed
 }
 
 // Initialize accordion functionality
@@ -446,21 +491,42 @@ async function renderProductPage(id) {
   // Generate variant buttons HTML
   let variantButtons = '';
   let firstPrice = null;
+  let firstMrp = null;
+  let firstOfferPrice = null;
   
   if (product.variants && product.variants.length > 0) {
-    variantButtons = product.variants.map((v, index) => {
+    product.variants.forEach((v, index) => {
       const isSelected = index === 0 ? 'selected' : '';
-      if (index === 0) firstPrice = v.price;
-      return `<button class="variant-btn ${isSelected}" data-price="${v.price}" data-variant-id="${v.id}">${v.label}</button>`;
-    }).join('');
+      if (index === 0) {
+        // For Silicone Gel Sheet, use offerPrice; for others, use price
+        if (v.offerPrice !== undefined) {
+          firstPrice = v.offerPrice;
+          firstMrp = v.mrp;
+          firstOfferPrice = v.offerPrice;
+        } else if (v.price !== undefined) {
+          firstPrice = v.price;
+        } else {
+          firstPrice = null;
+        }
+      }
+      
+      // For Silicone Gel Sheet, include MRP and offerPrice; for others, just price
+      if (v.offerPrice !== undefined) {
+        variantButtons += `<button class="variant-btn ${isSelected}" data-mrp="${v.mrp}" data-offer-price="${v.offerPrice}" data-variant-id="${v.id}">${v.label}</button>`;
+      } else if (v.price !== undefined) {
+        variantButtons += `<button class="variant-btn ${isSelected}" data-price="${v.price}" data-variant-id="${v.id}">${v.label}</button>`;
+      } else {
+        variantButtons += `<button class="variant-btn ${isSelected}" data-variant-id="${v.id}">${v.label}</button>`;
+      }
+    });
   }
 
   // Generate placeholder image names based on product ID
   const productIdSlug = product.id.toLowerCase().replace(/[^a-z0-9]/g, '-');
   const placeholderImages = [
-    `assets/images/${productIdSlug}_gallery_01.jpg`,
-    `assets/images/${productIdSlug}_gallery_02.jpg`,
-    `assets/images/${productIdSlug}_gallery_03.jpg`
+    `assets/images/${productIdSlug}_gallery_01.png`,
+    `assets/images/${productIdSlug}_gallery_02.png`,
+    `assets/images/${productIdSlug}_gallery_03.png`
   ];
 
   container.innerHTML = `
@@ -480,7 +546,7 @@ async function renderProductPage(id) {
         </div>
         <div class="product-page-info">
           <h2>${product.name}</h2>
-          <div class="product-price">${firstPrice !== null ? formatPrice(firstPrice) : 'Price not available'}</div>
+
 
           ${product.variants && product.variants.length > 0 ? `
           <div class="variant-section">
@@ -489,66 +555,155 @@ async function renderProductPage(id) {
             </div>
           </div>
           
-          <div class="quantity-cart-row">
-            <div class="quantity-selector">
-              <button class="qty-btn minus">-</button>
-              <span class="qty-value">1</span>
-              <button class="qty-btn plus">+</button>
+          ${product.id === 'silicon-gel-sheet' ? `
+          <div class="product-pricing-display">
+            ${firstMrp ? `
+            <div class="product-modal-pricing">
+              <span class="product-modal-mrp">${formatPrice(firstMrp)}</span>
+              <span class="product-price">${formatPrice(firstOfferPrice)}</span>
+              <span class="product-modal-discount">${Math.round(((firstMrp - firstOfferPrice) / firstMrp) * 100)}% OFF</span>
             </div>
-            
-            <button class="btn btn-primary add-to-cart-btn" data-product-id="${product.id}">
-              <i class="fas fa-shopping-cart"></i> Add to Cart
-            </button>
-            
-            <button class="wishlist-btn">
-              <i class="far fa-heart"></i>
+            ` : ''}
+          </div>
+          
+          <!-- Single Buy Now button for Silicone Gel Sheet -->
+          <div class="buy-now-section">
+            <button class="btn btn-primary buy-now-btn" id="singleBuyNowBtn" data-selected-variant="${product.variants[0]?.id || ''}" data-amazon-link="${product.variants[0]?.amazonLink || ''}">
+              <i class="fas fa-shopping-bag"></i> Buy Now
             </button>
           </div>
+          ` : `
+          <div class="quantity-cart-row">
+            <a href="contact.html?product=${encodeURIComponent(product.id)}" class="btn btn-outline-dark">
+              <i class="fas fa-file-alt"></i> Get Quote
+            </a>
+          </div>
+          `}
           ` : ''}
           
           <div class="accordion-section">
             <div class="accordion">
               <div class="accordion-header">
-                <span>Product Details</span>
+                <span>Product Overview</span>
                 <span class="icon">+</span>
               </div>
               <div class="accordion-content">
-                <p>${product.shortDescription}</p>
+                <p>${product.overview || product.shortDescription}</p>
                 <p><strong>Brand:</strong> ${product.brand}</p>
+                <p><strong>Company:</strong> ${product.company || 'Not specified'}</p>
+                <p><strong>Ingredients:</strong> ${product.ingredients || 'Not specified'}</p>
                 <p><strong>Supplier:</strong> ${product.supplier}</p>
                 <p><strong>Category:</strong> ${product.category}</p>
               </div>
             </div>
-            
+                      
+            ${product.indications ? (() => {
+              let html = `
             <div class="accordion">
               <div class="accordion-header">
-                <span>Ingredients</span>
+                <span>Indications</span>
                 <span class="icon">+</span>
               </div>
               <div class="accordion-content">
-                <p>Specific ingredients information would be displayed here.</p>
+                <ul>`;
+              product.indications.forEach(indication => {
+                html += `<li>${indication}</li>`;
+              });
+              html += `</ul>
               </div>
-            </div>
-            
+            </div>`;
+              return html;
+            })() : ''}
+                      
+            ${product.howItWorks ? (() => {
+              let html = `
             <div class="accordion">
               <div class="accordion-header">
-                <span>Skin Types & Concerns</span>
+                <span>How It Works</span>
                 <span class="icon">+</span>
               </div>
               <div class="accordion-content">
-                <p>Information about suitable skin types and concerns would be displayed here.</p>
+                <ul>`;
+              product.howItWorks.forEach(item => {
+                html += `<li>${item}</li>`;
+              });
+              html += `</ul>
               </div>
-            </div>
-            
+            </div>`;
+              return html;
+            })() : ''}
+                      
+            ${product.benefits ? (() => {
+              let html = `
+            <div class="accordion">
+              <div class="accordion-header">
+                <span>Benefits</span>
+                <span class="icon">+</span>
+              </div>
+              <div class="accordion-content">
+                <ul>`;
+              product.benefits.forEach(benefit => {
+                html += `<li>${benefit}</li>`;
+              });
+              html += `</ul>
+              </div>
+            </div>`;
+              return html;
+            })() : ''}
+                      
+            ${product.contraindications ? (() => {
+              let html = `
+            <div class="accordion">
+              <div class="accordion-header">
+                <span>Contraindications</span>
+                <span class="icon">+</span>
+              </div>
+              <div class="accordion-content">
+                <ul>`;
+              product.contraindications.forEach(item => {
+                html += `<li>${item}</li>`;
+              });
+              html += `</ul>
+              </div>
+            </div>`;
+              return html;
+            })() : ''}
+                      
+            ${product.usage ? (() => {
+              let html = `
             <div class="accordion">
               <div class="accordion-header">
                 <span>How to Use</span>
                 <span class="icon">+</span>
               </div>
               <div class="accordion-content">
-                <p>Detailed usage instructions would be displayed here.</p>
+                <ol>`;
+              product.usage.forEach(instruction => {
+                html += `<li>${instruction}</li>`;
+              });
+              html += `</ol>
               </div>
-            </div>
+            </div>`;
+              return html;
+            })() : ''}
+                      
+            ${product.usedIn ? (() => {
+              let html = `
+            <div class="accordion">
+              <div class="accordion-header">
+                <span>Used In</span>
+                <span class="icon">+</span>
+              </div>
+              <div class="accordion-content">
+                <ul>`;
+              product.usedIn.forEach(use => {
+                html += `<li>${use}</li>`;
+              });
+              html += `</ul>
+              </div>
+            </div>`;
+              return html;
+            })() : ''}
           </div>
 
           <a href="products.html" class="btn btn-outline-dark" style="margin-top: 1rem;">
